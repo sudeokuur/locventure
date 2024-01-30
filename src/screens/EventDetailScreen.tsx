@@ -1,22 +1,15 @@
 import React from 'react';
-import { Button, View } from 'react-native';
+import { View } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 import EventDetail from '../components/EventDetail';
 
-const EventDetailScreen: React.FC = ({navigation}) => {
+const EventDetailScreen: React.FC = () => {
+  const route = useRoute();
+  const { event } = route.params || {};
+
   return (
     <View style={{ flex: 1, padding: 16 }}>
-      <Button title="Back" onPress={() => navigation.navigate('Events')} />
-      <EventDetail route={{
-              params: {
-                  event: {
-                      id: '',
-                      title: '',
-                      date: '',
-                      location: '',
-                      description: undefined
-                  }
-              }
-          }} />
+      <EventDetail event={event} />
     </View>
   );
 };

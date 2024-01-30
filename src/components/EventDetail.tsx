@@ -1,5 +1,3 @@
-// EventDetail.tsx
-
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -9,11 +7,11 @@ interface EventDetailProps {
     params: {
       event: {
         id: string;
-        title: string;
-        date: string;
-        location: string;
-        description?: string;
-        // Diğer etkinlik özelliklerini ekleyebilirsiniz
+        eventName: string; // Adjust property name to match what you use in Event component
+        eventDate: string; // Adjust property name to match what you use in Event component
+        eventLocation: string; // Adjust property name to match what you use in Event component
+        eventDescription?: string; // Adjust property name to match what you use in Event component
+        // Add other event properties as needed
       };
     };
   };
@@ -32,13 +30,13 @@ const EventDetail: React.FC<EventDetailProps> = ({ route }) => {
       <TouchableOpacity onPress={handleGoBack} style={styles.goBackButton}>
         <Text style={styles.goBackButtonText}>Geri Dön</Text>
       </TouchableOpacity>
-      <Text style={styles.title}>{event.title}</Text>
-      <Text style={styles.date}>Date: {event.date}</Text>
-      <Text style={styles.location}>Location: {event.location}</Text>
-      {event.description && (
-        <Text style={styles.description}>Description: {event.description}</Text>
+      <Text style={styles.title}>{event.eventName}</Text>
+      <Text style={styles.date}>Date: {event.eventDate}</Text>
+      <Text style={styles.location}>Location: {event.eventLocation}</Text>
+      {event.eventDescription && (
+        <Text style={styles.description}>Description: {event.eventDescription}</Text>
       )}
-      {/* Diğer bilgileri buraya ekleyebilirsiniz */}
+      {/* Add other event properties here */}
     </View>
   );
 };

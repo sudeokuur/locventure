@@ -1,11 +1,15 @@
+// EventsScreen.tsx
+
 import React, { useState, useEffect } from 'react';
-import { View, FlatList, StyleSheet, Button, TextInput } from 'react-native';
+import { View, FlatList, StyleSheet, Button, TextInput, TouchableOpacity } from 'react-native';
 import Event from '../components/Event';
 import { firebase } from '@react-native-firebase/firestore';
+import { useNavigation } from '@react-navigation/native';
 
-const EventsScreen: React.FC = ({ navigation }) => {
+const EventsScreen: React.FC = () => {
   const [searchText, setSearchText] = useState<string>('');
   const [events, setEvents] = useState<any[]>([]);
+  const navigation = useNavigation();
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -23,11 +27,17 @@ const EventsScreen: React.FC = ({ navigation }) => {
   }, []);
 
   const filteredEvents = events.filter((event) =>
-    event.name && event.name.toLowerCase().includes(searchText.toLowerCase())
+    event.eventName && event.eventName.toLowerCase().includes(searchText.toLowerCase())
   );
 
-  const renderItem = ({ item }: { item: { id: string; name: string; date: string; location: string } }) => (
-    <Event event={item} />
+  const handleEventPress = (event) => {
+    navigation.navigate('EventDetail', { event });
+  };
+
+  const renderItem = ({ item }) => (
+    <TouchableOpacity onPress={() => handleEventPress(item)}>
+      <Event event={item} />
+    </TouchableOpacity>
   );
 
   const handleLogout = () => {

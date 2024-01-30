@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "952018081316",
+    "project_id": "localeventure",
+    "storage_bucket": "localeventure.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:952018081316:android:d67e4bbfb6829895682ab1",
+        "android_client_info": {
+          "package_name": "com.locventure"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "952018081316-ldu91t43ho4q5f92obb1rqddquv7j73m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKk4PiG1ennPDUeuyb122WegL0jOvTSzE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "952018081316-ldu91t43ho4q5f92obb1rqddquv7j73m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

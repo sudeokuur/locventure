@@ -1,16 +1,16 @@
+// EventDetailScreen.tsx
+
 import React from 'react';
-import { View } from 'react-native';
-import { useRoute } from '@react-navigation/native';
-import EventDetail from '../components/EventDetail';
+import { createStackNavigator } from '@react-navigation/stack';
+import EventDetailComponent from '../components/EventDetail';
+
+const Stack = createStackNavigator();
 
 const EventDetailScreen: React.FC = () => {
-  const route = useRoute();
-  const { event } = route.params || {};
-
   return (
-    <View style={{ flex: 1, padding: 16 }}>
-      <EventDetail event={event} />
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen name="EventDetailComponent" component={EventDetailComponent }/>
+    </Stack.Navigator>
   );
 };
 

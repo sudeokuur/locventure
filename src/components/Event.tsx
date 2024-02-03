@@ -16,7 +16,7 @@ const Event: React.FC<EventProps> = ({ event }) => {
   const navigation = useNavigation();
 
   const handleEventPress = () => {
-    navigation.navigate('EventDetail', { event: event });
+    navigation.navigate('EventDetailComponent', { event: event });
   };
 
   return (

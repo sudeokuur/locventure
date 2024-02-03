@@ -31,7 +31,7 @@ const EventsScreen: React.FC = () => {
   );
 
   const handleEventPress = (event) => {
-    navigation.navigate('EventDetail', { event });
+    navigation.navigate('EventDetailScreen', { event });
   };
 
   const renderItem = ({ item }) => (
@@ -42,14 +42,14 @@ const EventsScreen: React.FC = () => {
 
   const handleLogout = () => {
     navigation.navigate('Login');
-    console.log('Çıkış yapıldı');
+    console.log('Logged out!');
   };
 
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.searchInput}
-        placeholder="Etkinlik Ara"
+        placeholder="Search for Event"
         value={searchText}
         onChangeText={(text) => setSearchText(text)}
       />

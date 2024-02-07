@@ -1,8 +1,5 @@
-// EventsScreen.tsx
-
 import React, { useState, useEffect } from 'react';
-import { View, FlatList, StyleSheet, Button, TextInput, TouchableOpacity } from 'react-native';
-import Event from '../components/Event';
+import { View, FlatList, StyleSheet, Button, TextInput, TouchableOpacity, Text } from 'react-native';
 import { firebase } from '@react-native-firebase/firestore';
 import { useNavigation } from '@react-navigation/native';
 
@@ -34,11 +31,24 @@ const EventsScreen: React.FC = () => {
     navigation.navigate('EventDetailScreen', { event });
   };
 
-  const renderItem = ({ item }) => (
-    <TouchableOpacity onPress={() => handleEventPress(item)}>
-      <Event event={item} />
-    </TouchableOpacity>
-  );
+  const renderItem = ({ item }) => {
+    let eventDateString = '';
+    if (item.eventDate instanceof firebase.firestore.Timestamp) {
+      eventDateString = item.eventDate.toDate().toLocaleDateString();
+    } else if (typeof item.eventDate === 'string') {
+      eventDateString = item.eventDate; // Assuming eventDate is already a string
+    } else {
+      // Handle other cases where eventDate is not a Firestore Timestamp or string
+    }
+  
+    return (
+      <TouchableOpacity onPress={() => handleEventPress(item)} style={styles.eventItem}>
+        <Text style={styles.eventName}>{item.eventName}</Text>
+        <Text>{eventDateString} - {item.eventTime}</Text>
+        <Text>{item.eventLocation}</Text>
+      </TouchableOpacity>
+    );
+  };
 
   const handleLogout = () => {
     navigation.navigate('Login');
@@ -74,6 +84,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 8,
+  },
+  eventItem: {
+    marginBottom: 16,
+    padding: 16,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+  },
+  eventName: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 8,
   },
 });
 

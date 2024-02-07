@@ -5,28 +5,30 @@ import { useNavigation } from '@react-navigation/native';
 interface EventProps {
   event: {
     id: string;
-    name: string;
-    date: string;
-    location: string;
-    description?: string;
+    eventName: string;
+    eventDate: string;
+    eventLocation: string;
+    eventDescription?: string;
   };
 }
 
 const Event: React.FC<EventProps> = ({ event }) => {
   const navigation = useNavigation();
 
-/*  const handleEventPress = () => {
-    navigation.navigate('EventDetail', { event: event });  // Ensure you pass the event object correctly
-  }; */
+  const handleEventPress = () => {
+    navigation.navigate('EventDetailComponent', { event: event });
+  };
 
   return (
-  /*  <TouchableOpacity onPress={handleEventPress}> */
+    <TouchableOpacity onPress={handleEventPress}>
       <View style={styles.container}>
-        <Text style={styles.title}>{event.name}</Text>
-        <Text style={styles.details}>Date: {event.date}</Text>
-        <Text style={styles.details}>Location: {event.location}</Text>
+        <Text style={styles.title}>{event.eventName}</Text>
+        <Text style={styles.details}>Date: {event.eventDate}</Text>
+        <Text style={styles.details}>Location: {event.eventLocation}</Text>
+        {/* Uncomment the following line if you have event description */}
+        {/* <Text style={styles.details}>Description: {event.eventDescription}</Text> */}
       </View>
- /*   </TouchableOpacity> */
+    </TouchableOpacity>
   );
 };
 

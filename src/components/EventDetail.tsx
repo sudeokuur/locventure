@@ -1,81 +1,70 @@
-// EventDetail.tsx
+// EventDetailComponent.tsx
 
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 interface EventDetailProps {
   route: {
-    params: {
-      event: {
+    params?: {
+      event?: {
         id: string;
-        title: string;
-        date: string;
-        location: string;
-        description?: string;
-        // Diğer etkinlik özelliklerini ekleyebilirsiniz
+        eventName: string;
+        eventDate: string;
+        eventLocation: string;
+        eventDescription?: string;
       };
     };
   };
 }
 
-const EventDetail: React.FC<EventDetailProps> = ({ route }) => {
-  const { event } = route.params;
+const EventDetailComponent: React.FC<EventDetailProps> = ({ route }) => {
+  const { event } = route.params || {};
   const navigation = useNavigation();
 
   const handleGoBack = () => {
     navigation.goBack();
   };
 
+  if (!event) {
+    // Handle the case where event is not defined
+    return (
+      <View style={styles.container}>
+        <Text style={styles.errorText}>Event details not available.</Text>
+      </View>
+    );
+  }
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={handleGoBack} style={styles.goBackButton}>
-        <Text style={styles.goBackButtonText}>Geri Dön</Text>
-      </TouchableOpacity>
-      <Text style={styles.title}>{event.title}</Text>
-      <Text style={styles.date}>Date: {event.date}</Text>
-      <Text style={styles.location}>Location: {event.location}</Text>
-      {event.description && (
-        <Text style={styles.description}>Description: {event.description}</Text>
+      <Text style={styles.title}>{event.eventName}</Text>
+      <Text style={styles.details}>Date: {event.eventDate}</Text>
+      <Text style={styles.details}>Location: {event.eventLocation}</Text>
+      {event.eventDescription && (
+        <Text style={styles.details}>Description: {event.eventDescription}</Text>
       )}
-      {/* Diğer bilgileri buraya ekleyebilirsiniz */}
+      <Button title="Go Back" onPress={handleGoBack} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     padding: 16,
-  },
-  goBackButton: {
-    marginBottom: 16,
-    padding: 8,
-    backgroundColor: '#2196F3',
-    borderRadius: 8,
-  },
-  goBackButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 8,
   },
-  date: {
+  details: {
     fontSize: 18,
-    marginBottom: 4,
-  },
-  location: {
-    fontSize: 18,
-    marginBottom: 4,
-  },
-  description: {
-    fontSize: 16,
     marginBottom: 8,
+  },
+  errorText: {
+    fontSize: 18,
+    color: 'red',
   },
 });
 
-export default EventDetail;
+export default EventDetailComponent;

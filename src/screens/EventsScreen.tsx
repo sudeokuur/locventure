@@ -1,18 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { View, FlatList, StyleSheet, Button, TextInput } from 'react-native';
-import Event from '../components/Event';
+import { View, FlatList, StyleSheet, Button, TextInput, TouchableOpacity, Text } from 'react-native';
 import { firebase } from '@react-native-firebase/firestore';
+import { useNavigation } from '@react-navigation/native';
 
-const EventsScreen: React.FC = ({ navigation }) => {
+const EventsScreen: React.FC = () => {
   const [searchText, setSearchText] = useState<string>('');
   const [events, setEvents] = useState<any[]>([]);
+  const navigation = useNavigation();
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
         const db = firebase.firestore();
         const snapshot = await db.collection('events').get();
-        const eventsData = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        const currentDate = new Date();
+
+        const eventsData = snapshot.docs
+          .map((doc) => ({ id: doc.id, ...doc.data() }))
+          .filter((event) => {
+            const eventDate = event.eventDate.toDate();
+            return eventDate >= currentDate; // Only include events with dates on or after the current date
+          });
+
         setEvents(eventsData);
       } catch (error) {
         console.error('Error fetching events from Firestore:', error);
@@ -23,23 +32,40 @@ const EventsScreen: React.FC = ({ navigation }) => {
   }, []);
 
   const filteredEvents = events.filter((event) =>
-    event.name && event.name.toLowerCase().includes(searchText.toLowerCase())
+    event.eventName && event.eventName.toLowerCase().includes(searchText.toLowerCase())
   );
 
-  const renderItem = ({ item }: { item: { id: string; name: string; date: string; location: string } }) => (
-    <Event event={item} />
+  const handleEventPress = (event) => {
+    navigation.navigate('EventDetailScreen', { event });
+  };
+
+  const renderItem = ({ item }) => {
+  let eventTimeString = '';
+  if (item.eventTime instanceof firebase.firestore.Timestamp) {
+    eventTimeString = item.eventTime.toDate().toLocaleTimeString();
+  } else {
+    eventTimeString = item.eventTime; // Assuming eventTime is already a string
+  }
+
+  return (
+    <TouchableOpacity onPress={() => handleEventPress(item)} style={styles.eventItem}>
+      <Text style={styles.eventName}>{item.eventName}</Text>
+      <Text>{item.eventDate.toDate().toLocaleDateString()} - {eventTimeString}</Text>
+      <Text>{item.eventLocation}</Text>
+    </TouchableOpacity>
   );
+};
 
   const handleLogout = () => {
     navigation.navigate('Login');
-    console.log('Çıkış yapıldı');
+    console.log('Logged out!');
   };
 
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.searchInput}
-        placeholder="Etkinlik Ara"
+        placeholder="Search for Event"
         value={searchText}
         onChangeText={(text) => setSearchText(text)}
       />
@@ -64,6 +90,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 8,
+  },
+  eventItem: {
+    marginBottom: 16,
+    padding: 16,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+  },
+  eventName: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 8,
   },
 });
 

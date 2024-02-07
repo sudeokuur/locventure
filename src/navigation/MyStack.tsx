@@ -7,6 +7,7 @@ import Tabs from './Tabs';
 import EventsScreen from '../screens/EventsScreen';
 import EventDetailScreen from '../screens/EventDetailScreen';
 import PastEventsScreen from '../screens/PastEventsScreen';
+import EventDetailComponent from '../components/EventDetail';
 const Stack = createStackNavigator();
 
 const MyStack: React.FC = () => {
@@ -19,6 +20,7 @@ const MyStack: React.FC = () => {
       <Stack.Screen name="Profile" component={ProfileScreen}/>
       <Stack.Screen name="PastEvents" component={PastEventsScreen}/>
       <Stack.Screen name="EventDetail" component={EventDetailScreen}/>
+      <Stack.Screen name="EventDetailComponent" component={EventDetailComponent} />
       
 
     </Stack.Navigator>

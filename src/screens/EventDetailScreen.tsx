@@ -1,23 +1,16 @@
-import React from 'react';
-import { Button, View } from 'react-native';
-import EventDetail from '../components/EventDetail';
+// EventDetailScreen.tsx
 
-const EventDetailScreen: React.FC = ({navigation}) => {
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import EventDetailComponent from '../components/EventDetail';
+
+const Stack = createStackNavigator();
+
+const EventDetailScreen: React.FC = () => {
   return (
-    <View style={{ flex: 1, padding: 16 }}>
-      <Button title="Back" onPress={() => navigation.navigate('Events')} />
-      <EventDetail route={{
-              params: {
-                  event: {
-                      id: '',
-                      title: '',
-                      date: '',
-                      location: '',
-                      description: undefined
-                  }
-              }
-          }} />
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen name="EventDetailComponent" component={EventDetailComponent }/>
+    </Stack.Navigator>
   );
 };
 

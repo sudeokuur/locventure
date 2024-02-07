@@ -1,27 +1,80 @@
-
-import React from 'react';
-import { View, FlatList, StyleSheet } from 'react-native';
-import Event from '../components/Event';
-// Mock data
-const mockEvents = [
-  { id: '1', title: 'Geçmiş Etkinlik 1', date: '2024-01-28', location: 'Lokasyon 1' },
-  { id: '2', title: 'Geçmiş Etkinlik 2', date: '2024-01-29', location: 'Lokasyon 2' },
-  { id: '3', title: 'Geçmiş Etkinlik 3', date: '2024-01-30', location: 'Lokasyon 3' },
-  // ... Diğer etkinlikler
-];
+import React, { useState, useEffect } from 'react';
+import { View, FlatList, StyleSheet, Button, TextInput, TouchableOpacity, Text } from 'react-native';
+import { firebase } from '@react-native-firebase/firestore';
+import { useNavigation } from '@react-navigation/native';
 
 const PastEventsScreen: React.FC = () => {
-  const renderItem = ({ item }: { item: { id: string; title: string; date: string; location: string } }) => (
-    <Event title={item.title} date={item.date} location={item.location} />
+  const [searchText, setSearchText] = useState<string>('');
+  const [events, setEvents] = useState<any[]>([]);
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const db = firebase.firestore();
+        const snapshot = await db.collection('events').get();
+        const currentDate = new Date();
+
+        const eventsData = snapshot.docs
+          .map((doc) => ({ id: doc.id, ...doc.data() }))
+          .filter((event) => {
+            const eventDate = event.eventDate.toDate();
+            return eventDate < currentDate; // Only include events with dates on or after the current date
+          });
+
+        setEvents(eventsData);
+      } catch (error) {
+        console.error('Error fetching events from Firestore:', error);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
+  const filteredEvents = events.filter((event) =>
+    event.eventName && event.eventName.toLowerCase().includes(searchText.toLowerCase())
   );
+
+  const handleEventPress = (event) => {
+    navigation.navigate('EventDetailScreen', { event });
+  };
+
+  const renderItem = ({ item }) => {
+    let eventTimeString = '';
+    if (item.eventTime instanceof firebase.firestore.Timestamp) {
+      eventTimeString = item.eventTime.toDate().toLocaleTimeString();
+    } else {
+      eventTimeString = item.eventTime; // Assuming eventTime is already a string
+    }
+
+    return (
+      <TouchableOpacity onPress={() => handleEventPress(item)} style={styles.eventItem}>
+        <Text style={styles.eventName}>{item.eventName}</Text>
+        <Text>{item.eventDate.toDate().toLocaleDateString()} - {eventTimeString}</Text>
+        <Text>{item.eventLocation}</Text>
+      </TouchableOpacity>
+    );
+  };
+
+  const handleLogout = () => {
+    navigation.navigate('Login');
+    console.log('Logged out!');
+  };
 
   return (
     <View style={styles.container}>
+      <TextInput
+        style={styles.searchInput}
+        placeholder="Search for Event"
+        value={searchText}
+        onChangeText={(text) => setSearchText(text)}
+      />
       <FlatList
-        data={mockEvents}
+        data={filteredEvents}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
       />
+      <Button title="Logout" onPress={handleLogout} />
     </View>
   );
 };
@@ -30,6 +83,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+  },
+  searchInput: {
+    marginBottom: 16,
+    padding: 12,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+  },
+  eventItem: {
+    marginBottom: 16,
+    padding: 16,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+  },
+  eventName: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 8,
   },
 });
 

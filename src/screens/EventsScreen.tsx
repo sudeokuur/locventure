@@ -13,7 +13,15 @@ const EventsScreen: React.FC = () => {
       try {
         const db = firebase.firestore();
         const snapshot = await db.collection('events').get();
-        const eventsData = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        const currentDate = new Date();
+
+        const eventsData = snapshot.docs
+          .map((doc) => ({ id: doc.id, ...doc.data() }))
+          .filter((event) => {
+            const eventDate = event.eventDate.toDate();
+            return eventDate >= currentDate; // Only include events with dates on or after the current date
+          });
+
         setEvents(eventsData);
       } catch (error) {
         console.error('Error fetching events from Firestore:', error);
@@ -32,23 +40,21 @@ const EventsScreen: React.FC = () => {
   };
 
   const renderItem = ({ item }) => {
-    let eventDateString = '';
-    if (item.eventDate instanceof firebase.firestore.Timestamp) {
-      eventDateString = item.eventDate.toDate().toLocaleDateString();
-    } else if (typeof item.eventDate === 'string') {
-      eventDateString = item.eventDate; // Assuming eventDate is already a string
-    } else {
-      // Handle other cases where eventDate is not a Firestore Timestamp or string
-    }
-  
-    return (
-      <TouchableOpacity onPress={() => handleEventPress(item)} style={styles.eventItem}>
-        <Text style={styles.eventName}>{item.eventName}</Text>
-        <Text>{eventDateString} - {item.eventTime}</Text>
-        <Text>{item.eventLocation}</Text>
-      </TouchableOpacity>
-    );
-  };
+  let eventTimeString = '';
+  if (item.eventTime instanceof firebase.firestore.Timestamp) {
+    eventTimeString = item.eventTime.toDate().toLocaleTimeString();
+  } else {
+    eventTimeString = item.eventTime; // Assuming eventTime is already a string
+  }
+
+  return (
+    <TouchableOpacity onPress={() => handleEventPress(item)} style={styles.eventItem}>
+      <Text style={styles.eventName}>{item.eventName}</Text>
+      <Text>{item.eventDate.toDate().toLocaleDateString()} - {eventTimeString}</Text>
+      <Text>{item.eventLocation}</Text>
+    </TouchableOpacity>
+  );
+};
 
   const handleLogout = () => {
     navigation.navigate('Login');

@@ -21,7 +21,7 @@ const EventsScreen: React.FC = () => {
             const eventDate = event.eventDate.toDate();
             return eventDate >= currentDate; // Only include events with dates on or after the current date
           });
-
+//test test test
         setEvents(eventsData);
       } catch (error) {
         console.error('Error fetching events from Firestore:', error);

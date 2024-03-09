@@ -4,7 +4,7 @@
             "outputFile": "com.locventure.app-mergeDebugResources-40:/values-ldrtl-v17/values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "/home/sudeokuur/.gradle/caches/transforms-3/de892d089af2e0549b94392be2625b83/transformed/material-1.9.0/res/values-ldrtl-v17/values-ldrtl-v17.xml",
+                    "source": "C:\\Users\\etera\\.gradle\\caches\\transforms-3\\de892d089af2e0549b94392be2625b83\\transformed\\material-1.9.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

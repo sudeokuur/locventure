@@ -9,307 +9,307 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:3:5-67
-11-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:3:22-64
+11-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:3:5-67
+11-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:3:22-64
 12    <uses-permission android:name="android.permission.WAKE_LOCK" />
-12-->[:react-native-firebase_auth] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-68
-12-->[:react-native-firebase_auth] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:22-65
+12-->[:react-native-firebase_auth] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\auth\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-68
+12-->[:react-native-firebase_auth] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\auth\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:22-65
 13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-13-->[:react-native-firebase_auth] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-79
-13-->[:react-native-firebase_auth] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-76
+13-->[:react-native-firebase_auth] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\auth\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-79
+13-->[:react-native-firebase_auth] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\auth\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-76
 14    <!--
 15    This manifest file is used only by Gradle to configure debug-only capabilities
 16    for React Native Apps.
 17    -->
 18    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-18-->[com.facebook.react:react-android:0.73.2] /home/sudeokuur/.gradle/caches/transforms-3/4995d5c026d3d99349b4a96797382c3a/transformed/jetified-react-android-0.73.2-debug/AndroidManifest.xml:16:5-78
-18-->[com.facebook.react:react-android:0.73.2] /home/sudeokuur/.gradle/caches/transforms-3/4995d5c026d3d99349b4a96797382c3a/transformed/jetified-react-android-0.73.2-debug/AndroidManifest.xml:16:22-75
+18-->[com.facebook.react:react-android:0.73.2] C:\Users\etera\.gradle\caches\transforms-3\4995d5c026d3d99349b4a96797382c3a\transformed\jetified-react-android-0.73.2-debug\AndroidManifest.xml:16:5-78
+18-->[com.facebook.react:react-android:0.73.2] C:\Users\etera\.gradle\caches\transforms-3\4995d5c026d3d99349b4a96797382c3a\transformed\jetified-react-android-0.73.2-debug\AndroidManifest.xml:16:22-75
 19    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-19-->[com.facebook.flipper:flipper:0.201.0] /home/sudeokuur/.gradle/caches/transforms-3/4aa07803849e268812739df4f52cd2cf/transformed/jetified-flipper-0.201.0/AndroidManifest.xml:14:5-76
-19-->[com.facebook.flipper:flipper:0.201.0] /home/sudeokuur/.gradle/caches/transforms-3/4aa07803849e268812739df4f52cd2cf/transformed/jetified-flipper-0.201.0/AndroidManifest.xml:14:22-73
+19-->[com.facebook.flipper:flipper:0.201.0] C:\Users\etera\.gradle\caches\transforms-3\4aa07803849e268812739df4f52cd2cf\transformed\jetified-flipper-0.201.0\AndroidManifest.xml:14:5-76
+19-->[com.facebook.flipper:flipper:0.201.0] C:\Users\etera\.gradle\caches\transforms-3\4aa07803849e268812739df4f52cd2cf\transformed\jetified-flipper-0.201.0\AndroidManifest.xml:14:22-73
 20    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-20-->[com.google.android.recaptcha:recaptcha:18.4.0] /home/sudeokuur/.gradle/caches/transforms-3/5f653522d57f7d5ec6d34448f1bc69e5/transformed/jetified-recaptcha-18.4.0/AndroidManifest.xml:9:5-98
-20-->[com.google.android.recaptcha:recaptcha:18.4.0] /home/sudeokuur/.gradle/caches/transforms-3/5f653522d57f7d5ec6d34448f1bc69e5/transformed/jetified-recaptcha-18.4.0/AndroidManifest.xml:9:22-95
+20-->[com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\etera\.gradle\caches\transforms-3\5f653522d57f7d5ec6d34448f1bc69e5\transformed\jetified-recaptcha-18.4.0\AndroidManifest.xml:9:5-98
+20-->[com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\etera\.gradle\caches\transforms-3\5f653522d57f7d5ec6d34448f1bc69e5\transformed\jetified-recaptcha-18.4.0\AndroidManifest.xml:9:22-95
 21
 22    <permission
-22-->[androidx.core:core:1.9.0] /home/sudeokuur/.gradle/caches/transforms-3/d082e34b8e22673a4af20f2c25151681/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+22-->[androidx.core:core:1.9.0] C:\Users\etera\.gradle\caches\transforms-3\d082e34b8e22673a4af20f2c25151681\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
 23        android:name="com.locventure.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-23-->[androidx.core:core:1.9.0] /home/sudeokuur/.gradle/caches/transforms-3/d082e34b8e22673a4af20f2c25151681/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+23-->[androidx.core:core:1.9.0] C:\Users\etera\.gradle\caches\transforms-3\d082e34b8e22673a4af20f2c25151681\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
 24        android:protectionLevel="signature" />
-24-->[androidx.core:core:1.9.0] /home/sudeokuur/.gradle/caches/transforms-3/d082e34b8e22673a4af20f2c25151681/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+24-->[androidx.core:core:1.9.0] C:\Users\etera\.gradle\caches\transforms-3\d082e34b8e22673a4af20f2c25151681\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
 25
 26    <uses-permission android:name="com.locventure.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-26-->[androidx.core:core:1.9.0] /home/sudeokuur/.gradle/caches/transforms-3/d082e34b8e22673a4af20f2c25151681/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
-26-->[androidx.core:core:1.9.0] /home/sudeokuur/.gradle/caches/transforms-3/d082e34b8e22673a4af20f2c25151681/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+26-->[androidx.core:core:1.9.0] C:\Users\etera\.gradle\caches\transforms-3\d082e34b8e22673a4af20f2c25151681\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+26-->[androidx.core:core:1.9.0] C:\Users\etera\.gradle\caches\transforms-3\d082e34b8e22673a4af20f2c25151681\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 27
 28    <application
-28-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:5:5-24:19
+28-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:5:5-24:19
 29        android:name="com.locventure.MainApplication"
-29-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:6:7-38
+29-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:6:7-38
 30        android:allowBackup="false"
-30-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:10:7-34
+30-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:10:7-34
 31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-31-->[androidx.core:core:1.9.0] /home/sudeokuur/.gradle/caches/transforms-3/d082e34b8e22673a4af20f2c25151681/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+31-->[androidx.core:core:1.9.0] C:\Users\etera\.gradle\caches\transforms-3\d082e34b8e22673a4af20f2c25151681\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 32        android:debuggable="true"
 33        android:extractNativeLibs="true"
 34        android:icon="@mipmap/ic_launcher"
-34-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:8:7-41
+34-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:8:7-41
 35        android:label="@string/app_name"
-35-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:7:7-39
+35-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:7:7-39
 36        android:roundIcon="@mipmap/ic_launcher_round"
-36-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:9:7-52
+36-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:9:7-52
 37        android:theme="@style/AppTheme"
-37-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:11:7-38
+37-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:11:7-38
 38        android:usesCleartextTraffic="true" >
-38-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/debug/AndroidManifest.xml:6:9-44
+38-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\debug\AndroidManifest.xml:6:9-44
 39        <activity
-39-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:12:7-23:18
+39-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:12:7-23:18
 40            android:name="com.locventure.MainActivity"
-40-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:13:9-37
+40-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:13:9-37
 41            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-41-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:15:9-118
+41-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:15:9-118
 42            android:exported="true"
-42-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:18:9-32
+42-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:18:9-32
 43            android:label="@string/app_name"
-43-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:14:9-41
+43-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:14:9-41
 44            android:launchMode="singleTask"
-44-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:16:9-40
+44-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:16:9-40
 45            android:windowSoftInputMode="adjustResize" >
-45-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:17:9-51
+45-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:17:9-51
 46            <intent-filter>
-46-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:19:9-22:25
+46-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:19:9-22:25
 47                <action android:name="android.intent.action.MAIN" />
-47-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:20:13-65
-47-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:20:21-62
+47-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:20:13-65
+47-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:20:21-62
 48
 49                <category android:name="android.intent.category.LAUNCHER" />
-49-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:21:13-73
-49-->/home/sudeokuur/Desktop/bitirme/locventure/android/app/src/main/AndroidManifest.xml:21:23-70
+49-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:21:13-73
+49-->C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\android\app\src\main\AndroidManifest.xml:21:23-70
 50            </intent-filter>
 51        </activity>
 52
 53        <meta-data
-53-->[:react-native-firebase_app] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:9-11:36
+53-->[:react-native-firebase_app] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:9-11:36
 54            android:name="app_data_collection_default_enabled"
-54-->[:react-native-firebase_app] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-63
+54-->[:react-native-firebase_app] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:13-63
 55            android:value="true" />
-55-->[:react-native-firebase_app] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-33
+55-->[:react-native-firebase_app] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-33
 56
 57        <service
-57-->[:react-native-firebase_app] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-21:19
+57-->[:react-native-firebase_app] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-21:19
 58            android:name="com.google.firebase.components.ComponentDiscoveryService"
-58-->[:react-native-firebase_app] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-84
+58-->[:react-native-firebase_app] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-84
 59            android:directBootAware="true"
-59-->[:react-native-firebase_app] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-43
+59-->[:react-native-firebase_app] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-43
 60            android:exported="false" >
-60-->[:react-native-firebase_app] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-37
+60-->[:react-native-firebase_app] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-37
 61            <meta-data
-61-->[:react-native-firebase_app] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-20:85
+61-->[:react-native-firebase_app] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-20:85
 62                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
-62-->[:react-native-firebase_app] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:17-120
+62-->[:react-native-firebase_app] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:17-120
 63                android:value="com.google.firebase.components.ComponentRegistrar" />
-63-->[:react-native-firebase_app] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:17-82
+63-->[:react-native-firebase_app] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:17-82
 64            <meta-data
-64-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:69:13-71:85
+64-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:69:13-71:85
 65                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-65-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:70:17-109
+65-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:70:17-109
 66                android:value="com.google.firebase.components.ComponentRegistrar" />
-66-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:71:17-82
+66-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:71:17-82
 67            <meta-data
-67-->[com.google.firebase:firebase-firestore:24.10.1] /home/sudeokuur/.gradle/caches/transforms-3/4139e80203de64e9401decb974cd7387/transformed/jetified-firebase-firestore-24.10.1/AndroidManifest.xml:17:13-19:85
+67-->[com.google.firebase:firebase-firestore:24.10.1] C:\Users\etera\.gradle\caches\transforms-3\4139e80203de64e9401decb974cd7387\transformed\jetified-firebase-firestore-24.10.1\AndroidManifest.xml:17:13-19:85
 68                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
-68-->[com.google.firebase:firebase-firestore:24.10.1] /home/sudeokuur/.gradle/caches/transforms-3/4139e80203de64e9401decb974cd7387/transformed/jetified-firebase-firestore-24.10.1/AndroidManifest.xml:18:17-122
+68-->[com.google.firebase:firebase-firestore:24.10.1] C:\Users\etera\.gradle\caches\transforms-3\4139e80203de64e9401decb974cd7387\transformed\jetified-firebase-firestore-24.10.1\AndroidManifest.xml:18:17-122
 69                android:value="com.google.firebase.components.ComponentRegistrar" />
-69-->[com.google.firebase:firebase-firestore:24.10.1] /home/sudeokuur/.gradle/caches/transforms-3/4139e80203de64e9401decb974cd7387/transformed/jetified-firebase-firestore-24.10.1/AndroidManifest.xml:19:17-82
+69-->[com.google.firebase:firebase-firestore:24.10.1] C:\Users\etera\.gradle\caches\transforms-3\4139e80203de64e9401decb974cd7387\transformed\jetified-firebase-firestore-24.10.1\AndroidManifest.xml:19:17-82
 70            <meta-data
-70-->[com.google.firebase:firebase-firestore:24.10.1] /home/sudeokuur/.gradle/caches/transforms-3/4139e80203de64e9401decb974cd7387/transformed/jetified-firebase-firestore-24.10.1/AndroidManifest.xml:20:13-22:85
+70-->[com.google.firebase:firebase-firestore:24.10.1] C:\Users\etera\.gradle\caches\transforms-3\4139e80203de64e9401decb974cd7387\transformed\jetified-firebase-firestore-24.10.1\AndroidManifest.xml:20:13-22:85
 71                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-71-->[com.google.firebase:firebase-firestore:24.10.1] /home/sudeokuur/.gradle/caches/transforms-3/4139e80203de64e9401decb974cd7387/transformed/jetified-firebase-firestore-24.10.1/AndroidManifest.xml:21:17-111
+71-->[com.google.firebase:firebase-firestore:24.10.1] C:\Users\etera\.gradle\caches\transforms-3\4139e80203de64e9401decb974cd7387\transformed\jetified-firebase-firestore-24.10.1\AndroidManifest.xml:21:17-111
 72                android:value="com.google.firebase.components.ComponentRegistrar" />
-72-->[com.google.firebase:firebase-firestore:24.10.1] /home/sudeokuur/.gradle/caches/transforms-3/4139e80203de64e9401decb974cd7387/transformed/jetified-firebase-firestore-24.10.1/AndroidManifest.xml:22:17-82
+72-->[com.google.firebase:firebase-firestore:24.10.1] C:\Users\etera\.gradle\caches\transforms-3\4139e80203de64e9401decb974cd7387\transformed\jetified-firebase-firestore-24.10.1\AndroidManifest.xml:22:17-82
 73            <meta-data
-73-->[com.google.firebase:firebase-common-ktx:20.4.2] /home/sudeokuur/.gradle/caches/transforms-3/14eb063faedddbdf219f88c13c1717a5/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:12:13-14:85
+73-->[com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\etera\.gradle\caches\transforms-3\14eb063faedddbdf219f88c13c1717a5\transformed\jetified-firebase-common-ktx-20.4.2\AndroidManifest.xml:12:13-14:85
 74                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
-74-->[com.google.firebase:firebase-common-ktx:20.4.2] /home/sudeokuur/.gradle/caches/transforms-3/14eb063faedddbdf219f88c13c1717a5/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:13:17-116
+74-->[com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\etera\.gradle\caches\transforms-3\14eb063faedddbdf219f88c13c1717a5\transformed\jetified-firebase-common-ktx-20.4.2\AndroidManifest.xml:13:17-116
 75                android:value="com.google.firebase.components.ComponentRegistrar" />
-75-->[com.google.firebase:firebase-common-ktx:20.4.2] /home/sudeokuur/.gradle/caches/transforms-3/14eb063faedddbdf219f88c13c1717a5/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:14:17-82
+75-->[com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\etera\.gradle\caches\transforms-3\14eb063faedddbdf219f88c13c1717a5\transformed\jetified-firebase-common-ktx-20.4.2\AndroidManifest.xml:14:17-82
 76            <meta-data
-76-->[com.google.firebase:firebase-common:20.4.2] /home/sudeokuur/.gradle/caches/transforms-3/9561c2a8fef159e5cc151f7c712204ae/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:35:13-37:85
+76-->[com.google.firebase:firebase-common:20.4.2] C:\Users\etera\.gradle\caches\transforms-3\9561c2a8fef159e5cc151f7c712204ae\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:35:13-37:85
 77                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-77-->[com.google.firebase:firebase-common:20.4.2] /home/sudeokuur/.gradle/caches/transforms-3/9561c2a8fef159e5cc151f7c712204ae/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:36:17-109
+77-->[com.google.firebase:firebase-common:20.4.2] C:\Users\etera\.gradle\caches\transforms-3\9561c2a8fef159e5cc151f7c712204ae\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:36:17-109
 78                android:value="com.google.firebase.components.ComponentRegistrar" />
-78-->[com.google.firebase:firebase-common:20.4.2] /home/sudeokuur/.gradle/caches/transforms-3/9561c2a8fef159e5cc151f7c712204ae/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:37:17-82
+78-->[com.google.firebase:firebase-common:20.4.2] C:\Users\etera\.gradle\caches\transforms-3\9561c2a8fef159e5cc151f7c712204ae\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:37:17-82
 79        </service>
 80
 81        <provider
-81-->[:react-native-firebase_app] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:9-27:38
+81-->[:react-native-firebase_app] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:9-27:38
 82            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
-82-->[:react-native-firebase_app] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-88
+82-->[:react-native-firebase_app] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-88
 83            android:authorities="com.locventure.reactnativefirebaseappinitprovider"
-83-->[:react-native-firebase_app] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-86
+83-->[:react-native-firebase_app] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-86
 84            android:exported="false"
-84-->[:react-native-firebase_app] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-37
+84-->[:react-native-firebase_app] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-37
 85            android:initOrder="99" />
-85-->[:react-native-firebase_app] /home/sudeokuur/Desktop/bitirme/locventure/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-35
+85-->[:react-native-firebase_app] C:\Users\etera\OneDrive\Belgeler\GitHub\locventure\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-35
 86
 87        <activity
-87-->[com.facebook.react:react-android:0.73.2] /home/sudeokuur/.gradle/caches/transforms-3/4995d5c026d3d99349b4a96797382c3a/transformed/jetified-react-android-0.73.2-debug/AndroidManifest.xml:19:9-21:40
+87-->[com.facebook.react:react-android:0.73.2] C:\Users\etera\.gradle\caches\transforms-3\4995d5c026d3d99349b4a96797382c3a\transformed\jetified-react-android-0.73.2-debug\AndroidManifest.xml:19:9-21:40
 88            android:name="com.facebook.react.devsupport.DevSettingsActivity"
-88-->[com.facebook.react:react-android:0.73.2] /home/sudeokuur/.gradle/caches/transforms-3/4995d5c026d3d99349b4a96797382c3a/transformed/jetified-react-android-0.73.2-debug/AndroidManifest.xml:20:13-77
+88-->[com.facebook.react:react-android:0.73.2] C:\Users\etera\.gradle\caches\transforms-3\4995d5c026d3d99349b4a96797382c3a\transformed\jetified-react-android-0.73.2-debug\AndroidManifest.xml:20:13-77
 89            android:exported="false" />
-89-->[com.facebook.react:react-android:0.73.2] /home/sudeokuur/.gradle/caches/transforms-3/4995d5c026d3d99349b4a96797382c3a/transformed/jetified-react-android-0.73.2-debug/AndroidManifest.xml:21:13-37
+89-->[com.facebook.react:react-android:0.73.2] C:\Users\etera\.gradle\caches\transforms-3\4995d5c026d3d99349b4a96797382c3a\transformed\jetified-react-android-0.73.2-debug\AndroidManifest.xml:21:13-37
 90        <activity
-90-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:29:9-46:20
+90-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:29:9-46:20
 91            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-91-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:30:13-80
+91-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:30:13-80
 92            android:excludeFromRecents="true"
-92-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:31:13-46
+92-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:31:13-46
 93            android:exported="true"
-93-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:32:13-36
+93-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:32:13-36
 94            android:launchMode="singleTask"
-94-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:33:13-44
+94-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:33:13-44
 95            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-95-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:34:13-72
+95-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:34:13-72
 96            <intent-filter>
-96-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:35:13-45:29
+96-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:35:13-45:29
 97                <action android:name="android.intent.action.VIEW" />
-97-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:36:17-69
-97-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:36:25-66
+97-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:36:17-69
+97-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:36:25-66
 98
 99                <category android:name="android.intent.category.DEFAULT" />
-99-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:17-76
-99-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:27-73
+99-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:38:17-76
+99-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:38:27-73
 100                <category android:name="android.intent.category.BROWSABLE" />
-100-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:39:17-78
-100-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:39:27-75
+100-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:39:17-78
+100-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:39:27-75
 101
 102                <data
-102-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:41:17-44:51
+102-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:41:17-44:51
 103                    android:host="firebase.auth"
-103-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:42:21-49
+103-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:42:21-49
 104                    android:path="/"
-104-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:43:21-37
+104-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:43:21-37
 105                    android:scheme="genericidp" />
-105-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:44:21-48
+105-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:44:21-48
 106            </intent-filter>
 107        </activity>
 108        <activity
-108-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:47:9-64:20
+108-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:47:9-64:20
 109            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-109-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:48:13-79
+109-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:48:13-79
 110            android:excludeFromRecents="true"
-110-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:49:13-46
+110-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:49:13-46
 111            android:exported="true"
-111-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:50:13-36
+111-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:50:13-36
 112            android:launchMode="singleTask"
-112-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:51:13-44
+112-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:51:13-44
 113            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-113-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:52:13-72
+113-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:52:13-72
 114            <intent-filter>
-114-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:53:13-63:29
+114-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:53:13-63:29
 115                <action android:name="android.intent.action.VIEW" />
-115-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:36:17-69
-115-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:36:25-66
+115-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:36:17-69
+115-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:36:25-66
 116
 117                <category android:name="android.intent.category.DEFAULT" />
-117-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:17-76
-117-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:27-73
+117-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:38:17-76
+117-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:38:27-73
 118                <category android:name="android.intent.category.BROWSABLE" />
-118-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:39:17-78
-118-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:39:27-75
+118-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:39:17-78
+118-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:39:27-75
 119
 120                <data
-120-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:41:17-44:51
+120-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:41:17-44:51
 121                    android:host="firebase.auth"
-121-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:42:21-49
+121-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:42:21-49
 122                    android:path="/"
-122-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:43:21-37
+122-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:43:21-37
 123                    android:scheme="recaptcha" />
-123-->[com.google.firebase:firebase-auth:22.3.1] /home/sudeokuur/.gradle/caches/transforms-3/745ebd460e21754537e557eb904264b7/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:44:21-48
+123-->[com.google.firebase:firebase-auth:22.3.1] C:\Users\etera\.gradle\caches\transforms-3\745ebd460e21754537e557eb904264b7\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:44:21-48
 124            </intent-filter>
 125        </activity>
 126        <activity
-126-->[com.google.android.gms:play-services-auth:20.7.0] /home/sudeokuur/.gradle/caches/transforms-3/3e68979e0a25cd4f4c754f0e47987c85/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
+126-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\etera\.gradle\caches\transforms-3\3e68979e0a25cd4f4c754f0e47987c85\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:23:9-27:75
 127            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-127-->[com.google.android.gms:play-services-auth:20.7.0] /home/sudeokuur/.gradle/caches/transforms-3/3e68979e0a25cd4f4c754f0e47987c85/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
+127-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\etera\.gradle\caches\transforms-3\3e68979e0a25cd4f4c754f0e47987c85\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:24:13-93
 128            android:excludeFromRecents="true"
-128-->[com.google.android.gms:play-services-auth:20.7.0] /home/sudeokuur/.gradle/caches/transforms-3/3e68979e0a25cd4f4c754f0e47987c85/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
+128-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\etera\.gradle\caches\transforms-3\3e68979e0a25cd4f4c754f0e47987c85\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:25:13-46
 129            android:exported="false"
-129-->[com.google.android.gms:play-services-auth:20.7.0] /home/sudeokuur/.gradle/caches/transforms-3/3e68979e0a25cd4f4c754f0e47987c85/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
+129-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\etera\.gradle\caches\transforms-3\3e68979e0a25cd4f4c754f0e47987c85\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:26:13-37
 130            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-130-->[com.google.android.gms:play-services-auth:20.7.0] /home/sudeokuur/.gradle/caches/transforms-3/3e68979e0a25cd4f4c754f0e47987c85/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
+130-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\etera\.gradle\caches\transforms-3\3e68979e0a25cd4f4c754f0e47987c85\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:27:13-72
 131        <!--
 132            Service handling Google Sign-In user revocation. For apps that do not integrate with
 133            Google Sign-In, this service will never be started.
 134        -->
 135        <service
-135-->[com.google.android.gms:play-services-auth:20.7.0] /home/sudeokuur/.gradle/caches/transforms-3/3e68979e0a25cd4f4c754f0e47987c85/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
+135-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\etera\.gradle\caches\transforms-3\3e68979e0a25cd4f4c754f0e47987c85\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:33:9-37:51
 136            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-136-->[com.google.android.gms:play-services-auth:20.7.0] /home/sudeokuur/.gradle/caches/transforms-3/3e68979e0a25cd4f4c754f0e47987c85/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
+136-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\etera\.gradle\caches\transforms-3\3e68979e0a25cd4f4c754f0e47987c85\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:34:13-89
 137            android:exported="true"
-137-->[com.google.android.gms:play-services-auth:20.7.0] /home/sudeokuur/.gradle/caches/transforms-3/3e68979e0a25cd4f4c754f0e47987c85/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
+137-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\etera\.gradle\caches\transforms-3\3e68979e0a25cd4f4c754f0e47987c85\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:35:13-36
 138            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-138-->[com.google.android.gms:play-services-auth:20.7.0] /home/sudeokuur/.gradle/caches/transforms-3/3e68979e0a25cd4f4c754f0e47987c85/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
+138-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\etera\.gradle\caches\transforms-3\3e68979e0a25cd4f4c754f0e47987c85\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:36:13-107
 139            android:visibleToInstantApps="true" />
-139-->[com.google.android.gms:play-services-auth:20.7.0] /home/sudeokuur/.gradle/caches/transforms-3/3e68979e0a25cd4f4c754f0e47987c85/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
+139-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\etera\.gradle\caches\transforms-3\3e68979e0a25cd4f4c754f0e47987c85\transformed\jetified-play-services-auth-20.7.0\AndroidManifest.xml:37:13-48
 140
 141        <activity
-141-->[com.google.android.gms:play-services-base:18.0.1] /home/sudeokuur/.gradle/caches/transforms-3/f234e121b3d32927ecaa62fdb81b9b0c/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+141-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\etera\.gradle\caches\transforms-3\f234e121b3d32927ecaa62fdb81b9b0c\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
 142            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-142-->[com.google.android.gms:play-services-base:18.0.1] /home/sudeokuur/.gradle/caches/transforms-3/f234e121b3d32927ecaa62fdb81b9b0c/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+142-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\etera\.gradle\caches\transforms-3\f234e121b3d32927ecaa62fdb81b9b0c\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
 143            android:exported="false"
-143-->[com.google.android.gms:play-services-base:18.0.1] /home/sudeokuur/.gradle/caches/transforms-3/f234e121b3d32927ecaa62fdb81b9b0c/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+143-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\etera\.gradle\caches\transforms-3\f234e121b3d32927ecaa62fdb81b9b0c\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
 144            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-144-->[com.google.android.gms:play-services-base:18.0.1] /home/sudeokuur/.gradle/caches/transforms-3/f234e121b3d32927ecaa62fdb81b9b0c/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+144-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\etera\.gradle\caches\transforms-3\f234e121b3d32927ecaa62fdb81b9b0c\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
 145
 146        <provider
-146-->[com.google.firebase:firebase-common:20.4.2] /home/sudeokuur/.gradle/caches/transforms-3/9561c2a8fef159e5cc151f7c712204ae/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:23:9-28:39
+146-->[com.google.firebase:firebase-common:20.4.2] C:\Users\etera\.gradle\caches\transforms-3\9561c2a8fef159e5cc151f7c712204ae\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:23:9-28:39
 147            android:name="com.google.firebase.provider.FirebaseInitProvider"
-147-->[com.google.firebase:firebase-common:20.4.2] /home/sudeokuur/.gradle/caches/transforms-3/9561c2a8fef159e5cc151f7c712204ae/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:24:13-77
+147-->[com.google.firebase:firebase-common:20.4.2] C:\Users\etera\.gradle\caches\transforms-3\9561c2a8fef159e5cc151f7c712204ae\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:24:13-77
 148            android:authorities="com.locventure.firebaseinitprovider"
-148-->[com.google.firebase:firebase-common:20.4.2] /home/sudeokuur/.gradle/caches/transforms-3/9561c2a8fef159e5cc151f7c712204ae/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:25:13-72
+148-->[com.google.firebase:firebase-common:20.4.2] C:\Users\etera\.gradle\caches\transforms-3\9561c2a8fef159e5cc151f7c712204ae\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:25:13-72
 149            android:directBootAware="true"
-149-->[com.google.firebase:firebase-common:20.4.2] /home/sudeokuur/.gradle/caches/transforms-3/9561c2a8fef159e5cc151f7c712204ae/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:26:13-43
+149-->[com.google.firebase:firebase-common:20.4.2] C:\Users\etera\.gradle\caches\transforms-3\9561c2a8fef159e5cc151f7c712204ae\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:26:13-43
 150            android:exported="false"
-150-->[com.google.firebase:firebase-common:20.4.2] /home/sudeokuur/.gradle/caches/transforms-3/9561c2a8fef159e5cc151f7c712204ae/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:27:13-37
+150-->[com.google.firebase:firebase-common:20.4.2] C:\Users\etera\.gradle\caches\transforms-3\9561c2a8fef159e5cc151f7c712204ae\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:27:13-37
 151            android:initOrder="100" />
-151-->[com.google.firebase:firebase-common:20.4.2] /home/sudeokuur/.gradle/caches/transforms-3/9561c2a8fef159e5cc151f7c712204ae/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:28:13-36
+151-->[com.google.firebase:firebase-common:20.4.2] C:\Users\etera\.gradle\caches\transforms-3\9561c2a8fef159e5cc151f7c712204ae\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:28:13-36
 152
 153        <meta-data
-153-->[com.google.android.gms:play-services-basement:18.2.0] /home/sudeokuur/.gradle/caches/transforms-3/71b7f6bd809cffe5103c8c3986057954/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
+153-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\etera\.gradle\caches\transforms-3\71b7f6bd809cffe5103c8c3986057954\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:21:9-23:69
 154            android:name="com.google.android.gms.version"
-154-->[com.google.android.gms:play-services-basement:18.2.0] /home/sudeokuur/.gradle/caches/transforms-3/71b7f6bd809cffe5103c8c3986057954/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
+154-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\etera\.gradle\caches\transforms-3\71b7f6bd809cffe5103c8c3986057954\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:22:13-58
 155            android:value="@integer/google_play_services_version" />
-155-->[com.google.android.gms:play-services-basement:18.2.0] /home/sudeokuur/.gradle/caches/transforms-3/71b7f6bd809cffe5103c8c3986057954/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
+155-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\etera\.gradle\caches\transforms-3\71b7f6bd809cffe5103c8c3986057954\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:23:13-66
 156
 157        <provider
-157-->[androidx.emoji2:emoji2:1.2.0] /home/sudeokuur/.gradle/caches/transforms-3/531944abd99ec48c41a572e584058bb8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+157-->[androidx.emoji2:emoji2:1.2.0] C:\Users\etera\.gradle\caches\transforms-3\531944abd99ec48c41a572e584058bb8\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
 158            android:name="androidx.startup.InitializationProvider"
-158-->[androidx.emoji2:emoji2:1.2.0] /home/sudeokuur/.gradle/caches/transforms-3/531944abd99ec48c41a572e584058bb8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+158-->[androidx.emoji2:emoji2:1.2.0] C:\Users\etera\.gradle\caches\transforms-3\531944abd99ec48c41a572e584058bb8\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
 159            android:authorities="com.locventure.androidx-startup"
-159-->[androidx.emoji2:emoji2:1.2.0] /home/sudeokuur/.gradle/caches/transforms-3/531944abd99ec48c41a572e584058bb8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+159-->[androidx.emoji2:emoji2:1.2.0] C:\Users\etera\.gradle\caches\transforms-3\531944abd99ec48c41a572e584058bb8\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
 160            android:exported="false" >
-160-->[androidx.emoji2:emoji2:1.2.0] /home/sudeokuur/.gradle/caches/transforms-3/531944abd99ec48c41a572e584058bb8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+160-->[androidx.emoji2:emoji2:1.2.0] C:\Users\etera\.gradle\caches\transforms-3\531944abd99ec48c41a572e584058bb8\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
 161            <meta-data
-161-->[androidx.emoji2:emoji2:1.2.0] /home/sudeokuur/.gradle/caches/transforms-3/531944abd99ec48c41a572e584058bb8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+161-->[androidx.emoji2:emoji2:1.2.0] C:\Users\etera\.gradle\caches\transforms-3\531944abd99ec48c41a572e584058bb8\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
 162                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-162-->[androidx.emoji2:emoji2:1.2.0] /home/sudeokuur/.gradle/caches/transforms-3/531944abd99ec48c41a572e584058bb8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+162-->[androidx.emoji2:emoji2:1.2.0] C:\Users\etera\.gradle\caches\transforms-3\531944abd99ec48c41a572e584058bb8\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
 163                android:value="androidx.startup" />
-163-->[androidx.emoji2:emoji2:1.2.0] /home/sudeokuur/.gradle/caches/transforms-3/531944abd99ec48c41a572e584058bb8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+163-->[androidx.emoji2:emoji2:1.2.0] C:\Users\etera\.gradle\caches\transforms-3\531944abd99ec48c41a572e584058bb8\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
 164            <meta-data
-164-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/sudeokuur/.gradle/caches/transforms-3/910287a92276b36b2485e6076cef2693/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+164-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\etera\.gradle\caches\transforms-3\910287a92276b36b2485e6076cef2693\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
 165                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-165-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/sudeokuur/.gradle/caches/transforms-3/910287a92276b36b2485e6076cef2693/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+165-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\etera\.gradle\caches\transforms-3\910287a92276b36b2485e6076cef2693\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
 166                android:value="androidx.startup" />
-166-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/sudeokuur/.gradle/caches/transforms-3/910287a92276b36b2485e6076cef2693/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+166-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\etera\.gradle\caches\transforms-3\910287a92276b36b2485e6076cef2693\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
 167        </provider>
 168
 169        <meta-data
-169-->[com.facebook.soloader:soloader:0.10.5] /home/sudeokuur/.gradle/caches/transforms-3/13fe5e27b4be42bbc2a565f0aed50545/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:12:9-14:37
+169-->[com.facebook.soloader:soloader:0.10.5] C:\Users\etera\.gradle\caches\transforms-3\13fe5e27b4be42bbc2a565f0aed50545\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:12:9-14:37
 170            android:name="com.facebook.soloader.enabled"
-170-->[com.facebook.soloader:soloader:0.10.5] /home/sudeokuur/.gradle/caches/transforms-3/13fe5e27b4be42bbc2a565f0aed50545/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:13:13-57
+170-->[com.facebook.soloader:soloader:0.10.5] C:\Users\etera\.gradle\caches\transforms-3\13fe5e27b4be42bbc2a565f0aed50545\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:13:13-57
 171            android:value="false" />
-171-->[com.facebook.soloader:soloader:0.10.5] /home/sudeokuur/.gradle/caches/transforms-3/13fe5e27b4be42bbc2a565f0aed50545/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:14:13-34
+171-->[com.facebook.soloader:soloader:0.10.5] C:\Users\etera\.gradle\caches\transforms-3\13fe5e27b4be42bbc2a565f0aed50545\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:14:13-34
 172    </application>
 173
 174</manifest>

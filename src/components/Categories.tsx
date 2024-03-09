@@ -1,5 +1,15 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { Image, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+
+// Import category images
+import campingIcon from '../assets/categories/camping.png';
+import concertIcon from '../assets/categories/concert.png';
+import familyFriendlyIcon from '../assets/categories/familyfriendly.png';
+import festivalIcon from '../assets/categories/festival.png';
+import outdoorIcon from '../assets/categories/outdoor.png';
+import partyIcon from '../assets/categories/party.png';
+import sportIcon from '../assets/categories/sport.png';
+import theatreIcon from '../assets/categories/theatre.png';
 
 interface CategoriesProps {
   onSelectCategory: (category: string) => void;
@@ -11,56 +21,75 @@ const Categories: React.FC<CategoriesProps> = ({ onSelectCategory }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
+      <TouchableOpacity
+        style={styles.categoryButton}
+        onPress={() => handleCategorySelect('party')}
+      >
+        <Image source={partyIcon} style={styles.categoryImage} />
+      </TouchableOpacity>
       <TouchableOpacity
         style={styles.categoryButton}
         onPress={() => handleCategorySelect('concert')}
       >
-        <Text style={styles.categoryText}>Concert</Text>
+        <Image source={concertIcon} style={styles.categoryImage} />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.categoryButton}
         onPress={() => handleCategorySelect('theatre')}
       >
-        <Text style={styles.categoryText}>Theatre</Text>
+        <Image source={theatreIcon} style={styles.categoryImage} />
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.categoryButton}
+        onPress={() => handleCategorySelect('camping')}
+      >
+        <Image source={campingIcon} style={styles.categoryImage} />
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.categoryButton}
+        onPress={() => handleCategorySelect('familyfriendly')}
+      >
+        <Image source={familyFriendlyIcon} style={styles.categoryImage} />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.categoryButton}
         onPress={() => handleCategorySelect('sport')}
       >
-        <Text style={styles.categoryText}>Sport</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.categoryButton}
-        onPress={() => handleCategorySelect('dinner')}
-      >
-        <Text style={styles.categoryText}>Dinner</Text>
+        <Image source={sportIcon} style={styles.categoryImage} />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.categoryButton}
         onPress={() => handleCategorySelect('festival')}
       >
-        <Text style={styles.categoryText}>Festival</Text>
+        <Image source={festivalIcon} style={styles.categoryImage} />
       </TouchableOpacity>
-    </View>
+      <TouchableOpacity
+        style={styles.categoryButton}
+        onPress={() => handleCategorySelect('outdoor')}
+      >
+        <Image source={outdoorIcon} style={styles.categoryImage} />
+      </TouchableOpacity>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'column',
+    flexGrow: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 20,
+    backgroundColor: 'black', // Set background color to black
   },
   categoryButton: {
-    paddingVertical: 15,
-    paddingHorizontal: 30,
-    backgroundColor: '#eee',
-    borderRadius: 10,
-    marginBottom: 10,
+    margin: 5,
   },
-  categoryText: {
-    fontSize: 18,
+  categoryImage: {
+    width: 220,
+    height: 100,
+    borderRadius: 40,
   },
 });
 

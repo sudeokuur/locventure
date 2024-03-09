@@ -1,19 +1,21 @@
+import { createStackNavigator } from "@react-navigation/stack";
 import React from 'react';
-import { createStackNavigator} from "@react-navigation/stack"
-import LoginScreen from "../screens/LoginScreen"
-import SignUpScreen from "../screens/SignUpScreen"
-import ProfileScreen from "../screens/ProfileScreen";
-import Tabs from './Tabs';
-import EventsScreen from '../screens/EventsScreen';
-import EventDetailScreen from '../screens/EventDetailScreen';
-import PastEventsScreen from '../screens/PastEventsScreen';
 import EventDetailComponent from '../components/EventDetail';
+import EventDetailScreen from '../screens/EventDetailScreen';
+import EventsScreen from '../screens/EventsScreen';
+import LetsGetStarted from '../screens/LetsGetStarted';
+import LoginScreen from "../screens/LoginScreen";
+import PastEventsScreen from '../screens/PastEventsScreen';
+import ProfileScreen from "../screens/ProfileScreen";
+import SignUpScreen from "../screens/SignUpScreen";
+import Tabs from './Tabs';
 const Stack = createStackNavigator();
 
 const MyStack: React.FC = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Tabs" component={Tabs}/>
+      <Stack.Screen name="LetsGetStarted" component={LetsGetStarted}/>
       <Stack.Screen name="Login" component={LoginScreen}/>
       <Stack.Screen name="SignUp" component={SignUpScreen}/>
       <Stack.Screen name="Events" component={EventsScreen}/>

@@ -1,5 +1,5 @@
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import React, { FC } from "react";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 interface Props {
     title: string;
@@ -17,15 +17,18 @@ export default DefButton;
 
 const styles = StyleSheet.create({
     container: {
-        height: 50,
-        width: "100%",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#33FFA8", // Add the hash symbol
-        borderRadius: 30,
+        borderRadius: 10,
+    paddingVertical: 15,
+    paddingHorizontal: 40,
+    marginBottom: 20,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'purple',
+    color: 'black', // Text color
     },
     title: {
-        color: "white",
+        color: "black",
         fontSize: 20,
     },
 });

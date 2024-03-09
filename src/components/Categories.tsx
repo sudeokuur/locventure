@@ -10,7 +10,7 @@ import outdoorIcon from '../assets/categories/outdoor.png';
 import partyIcon from '../assets/categories/party.png';
 import sportIcon from '../assets/categories/sport.png';
 import theatreIcon from '../assets/categories/theatre.png';
-
+//yaşasın
 interface CategoriesProps {
   onSelectCategory: (category: string) => void;
 }

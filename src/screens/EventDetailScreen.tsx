@@ -1,7 +1,7 @@
 // EventDetailScreen.tsx
 
-import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
+import React from 'react';
 import EventDetailComponent from '../components/EventDetail';
 
 const Stack = createStackNavigator();

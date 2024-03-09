@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { View, FlatList, StyleSheet, Button, TextInput, TouchableOpacity, Text } from 'react-native';
 import { firebase } from '@react-native-firebase/firestore';
 import { useNavigation } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
+import { Button, FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 const PastEventsScreen: React.FC = () => {
   const [searchText, setSearchText] = useState<string>('');

@@ -1,36 +1,53 @@
-// EventDetailComponent.tsx
-
-import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import firestore from '@react-native-firebase/firestore'; // Import Firebase Firestore
 import { useNavigation } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 interface EventDetailProps {
   route: {
     params?: {
-      event?: {
-        id: string;
-        eventName: string;
-        eventDate: string;
-        eventLocation: string;
-        eventDescription?: string;
-      };
+      eventId: string; // eventId passed from navigation
     };
   };
 }
 
-const EventDetailComponent: React.FC<EventDetailProps> = ({ route }) => {
-  const { event } = route.params || {};
+const EventDetail: React.FC<EventDetailProps> = ({ route }) => {
+  const { eventId } = route.params || {};
+  const [event, setEvent] = useState<any>(null); // State to store event details
   const navigation = useNavigation();
 
+  useEffect(() => {
+    const fetchEventDetails = async () => {
+      try {
+        const eventRef = firestore().collection('events').doc(eventId); // Reference to the event document
+        const documentSnapshot = await eventRef.get(); // Fetch event document
+        if (documentSnapshot.exists) {
+          // If event document exists, set event state
+          setEvent(documentSnapshot.data());
+        } else {
+          console.log('Event does not exist');
+        }
+      } catch (error) {
+        console.error('Error fetching event details:', error);
+      }
+    };
+
+    fetchEventDetails(); // Call fetchEventDetails function
+
+    // Cleanup function if needed
+    return () => {
+      // Cleanup code here
+    };
+  }, [eventId]); // Effect runs whenever eventId changes
+
   const handleGoBack = () => {
-    navigation.goBack();
+    navigation.goBack(); // Navigate back when "Go Back" button is pressed
   };
 
   if (!event) {
-    // Handle the case where event is not defined
     return (
       <View style={styles.container}>
-        <Text style={styles.errorText}>Event details not available.</Text>
+        <Text style={styles.errorText}>Loading event details...</Text>
       </View>
     );
   }
@@ -67,4 +84,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default EventDetailComponent;
+export default EventDetail;

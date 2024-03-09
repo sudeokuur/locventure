@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native'; // Import the hook
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
+import { Image, StyleSheet, Text, View } from 'react-native';
+import DefButton from '../components/DefButton';
 const LetsGetStarted: React.FC = () => {
   const navigation = useNavigation(); // Use the useNavigation hook to get the navigation object
 
@@ -11,12 +11,9 @@ const LetsGetStarted: React.FC = () => {
       <Image source={require('../assets/letsgetstarted.png')} style={styles.image} />
       <Text style={styles.description}>Discover local events, plan outings, and stay connected. Let's get started!</Text>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("SignUp")}>
-          <Text style={styles.buttonText}>Sign Up</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Login")}>
-          <Text style={styles.buttonText}>Sign In</Text>
-        </TouchableOpacity>
+        <DefButton title="Sign Up" onPress={() => navigation.navigate("SignUp")} />
+        <Text>           </Text>
+        <DefButton title="Sign In" onPress={() => navigation.navigate("Login")} />
       </View>
     </View>
   );
@@ -30,7 +27,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
     color: 'white',
     marginBottom: 20,
@@ -41,24 +38,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   description: {
-    fontSize: 16,
+    fontSize: 18,
     color: 'white',
     marginBottom: 20,
+    textAlign: "center",
   },
   buttonContainer: {
     flexDirection: 'row',
-  },
-  button: {
-    backgroundColor: 'blue',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
-    marginHorizontal: 10,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
   },
 });
 

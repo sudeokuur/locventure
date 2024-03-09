@@ -36,7 +36,7 @@ const EventsScreen: React.FC = () => {
   );
 
   const handleEventPress = (event) => {
-    navigation.navigate('EventDetailScreen', { event });
+    navigation.navigate('EventDetail', { event });
   };
 
   const renderItem = ({ item }) => {

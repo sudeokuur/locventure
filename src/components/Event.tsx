@@ -1,6 +1,6 @@
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 interface EventProps {
   event: {
@@ -8,7 +8,7 @@ interface EventProps {
     eventName: string;
     eventDate: string;
     eventLocation: string;
-    eventDescription?: string;
+    eventDescription: string;
   };
 }
 
@@ -16,7 +16,7 @@ const Event: React.FC<EventProps> = ({ event }) => {
   const navigation = useNavigation();
 
   const handleEventPress = () => {
-    navigation.navigate('EventDetailComponent', { event: event });
+    navigation.navigate('EventDetail', { event: event });
   };
 
   return (
@@ -25,6 +25,7 @@ const Event: React.FC<EventProps> = ({ event }) => {
         <Text style={styles.title}>{event.eventName}</Text>
         <Text style={styles.details}>Date: {event.eventDate}</Text>
         <Text style={styles.details}>Location: {event.eventLocation}</Text>
+        <Text style={styles.details}>Description: {event.eventDescription}</Text>
         {/* Uncomment the following line if you have event description */}
         {/* <Text style={styles.details}>Description: {event.eventDescription}</Text> */}
       </View>
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     padding: 16,
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '#262323',
     borderRadius: 8,
   },
   title: {

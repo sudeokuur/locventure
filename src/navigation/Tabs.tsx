@@ -53,6 +53,19 @@ const Tabs: React.FC = () => {
           tabBarLabel: 'Categories'
         }}
       />
+      <Tab.Screen
+        name="Profile"
+        component={CategoriesScreen}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <Image
+              style={styles.bottomTabIcon}
+              source={require('../assets/profilelogo.jpg')}
+            />
+          ),
+          tabBarLabel: 'Profile'
+        }}
+      />
     </Tab.Navigator>
   );
 };

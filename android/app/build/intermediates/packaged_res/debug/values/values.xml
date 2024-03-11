@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="ic_launcher_background">#ecdaf4</color>
     <integer name="react_native_dev_server_port">8081</integer>
     <integer name="react_native_inspector_proxy_port">8081</integer>
-    <string name="app_name">locventure</string>
+    <string name="app_name">LocaleVenture</string>
     <string name="default_web_client_id" translatable="false">952018081316-ldu91t43ho4q5f92obb1rqddquv7j73m.apps.googleusercontent.com</string>
     <string name="gcm_defaultSenderId" translatable="false">952018081316</string>
     <string name="google_api_key" translatable="false">AIzaSyBKk4PiG1ennPDUeuyb122WegL0jOvTSzE</string>

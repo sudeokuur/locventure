@@ -1,7 +1,7 @@
 import { firebase } from '@react-native-firebase/firestore';
 import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
-import { Button, FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, FlatList, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const HomePage: React.FC = () => {
   const [upcomingEvents, setUpcomingEvents] = useState<any[]>([]);
@@ -40,7 +40,7 @@ const HomePage: React.FC = () => {
   }, []);
 
   const handleEventPress = (event) => {
-    navigation.navigate('EventDetail', { event });
+    navigation.navigate('EventDetail', { event: event });
   };
 
   const renderItem = ({ item }) => {
@@ -53,9 +53,17 @@ const HomePage: React.FC = () => {
 
     return (
       <TouchableOpacity onPress={() => handleEventPress(item)} style={styles.eventItem}>
-        <Text style={styles.eventName}>{item.eventName}</Text>
-        <Text>{item.eventDate.toDate().toLocaleDateString()} - {eventTimeString}</Text>
-        <Text>{item.eventLocation}</Text>
+        <ImageBackground
+          source={{ uri: item.eventImage }}
+          style={styles.background}
+          imageStyle={{ borderRadius: 8 }}
+        >
+          <View style={styles.container}>
+            <Text style={[styles.eventName, { color: 'white' }]}>{item.eventName}</Text>
+            <Text style={{ color: 'white' }}>Date: {item.eventDate.toDate().toLocaleDateString()} - {eventTimeString}</Text>
+            <Text style={{ color: 'white' }}>Location: {item.eventLocation}</Text>
+          </View>
+        </ImageBackground>
       </TouchableOpacity>
     );
   };
@@ -66,65 +74,64 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <View style={styles.container}>
-      
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Upcoming Events</Text>
-        <FlatList
-          data={upcomingEvents}
-          keyExtractor={(item) => item.id}
-          renderItem={renderItem}
-        />
+    <ScrollView contentContainerStyle={styles.scrollViewContainer}>
+      <View style={styles.container}>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Upcoming Events</Text>
+          <FlatList
+            data={upcomingEvents}
+            keyExtractor={(item) => item.id}
+            renderItem={renderItem}
+          />
+        </View>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Past Events</Text>
+          <FlatList
+            data={pastEvents}
+            keyExtractor={(item) => item.id}
+            renderItem={renderItem}
+            horizontal={true} // Set FlatList to horizontal mode
+          />
+        </View>
+        <Button title="Logout" onPress={handleLogout} />
       </View>
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Past Events</Text>
-        <FlatList
-          data={pastEvents}
-          keyExtractor={(item) => item.id}
-          renderItem={renderItem}
-          horizontal={true} // Set FlatList to horizontal mode
-        />
-      </View>
-      <Button title="Logout" onPress={handleLogout} />
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  scrollViewContainer: {
+    flexGrow: 1,
+    paddingVertical: 16,
+    backgroundColor: 'black',
+  },
   container: {
     flex: 1,
-    padding: 16,
-    backgroundColor: 'black', // Set background color to black
-  },
-  searchInput: {
-    marginBottom: 16,
-    padding: 12,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
-    backgroundColor: 'white', // Set input background color to white
+    paddingHorizontal: 16,
   },
   section: {
-    marginBottom: 24,
+    marginBottom: 32,
   },
   sectionTitle: {
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 16,
-    color: 'white', // Set section title color to white
+    color: 'white',
   },
   eventItem: {
     marginBottom: 16,
-    padding: 16,
-    borderWidth: 1,
-    borderColor: '#ccc',
     borderRadius: 8,
-    backgroundColor: 'white', // Set event item background color to white
+    overflow: 'hidden',
+  },
+  background: {
+    padding: 36,
+    backgroundColor: 'transparent'
   },
   eventName: {
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 8,
+    color: 'white',
   },
 });
 

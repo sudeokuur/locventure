@@ -4,6 +4,10 @@
         "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_homebutton.png"
     },
     {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
         "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_categories_concert.png.flat",
         "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_categories_concert.png"
     },
@@ -14,6 +18,14 @@
     {
         "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_letsgetstarted.png.flat",
         "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_letsgetstarted.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.locventure.app-main-41:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-hdpi/ic_launcher_foreground.png"
     },
     {
         "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_categories_camping.png.flat",
@@ -38,6 +50,10 @@
     {
         "merged": "com.locventure.app-merged_res-40:/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "com.locventure.app-main-41:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-xxxhdpi/ic_launcher_foreground.png"
     },
     {
         "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_categories_theatre.png.flat",
@@ -72,12 +88,16 @@
         "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_categories_familyfriendly.png"
     },
     {
+        "merged": "com.locventure.app-merged_res-40:/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
         "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_categories_festival.png.flat",
         "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_categories_festival.png"
     },
     {
-        "merged": "com.locventure.app-merged_res-40:/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
-        "source": "com.locventure.app-res-34:/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+        "merged": "com.locventure.app-merged_res-40:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-xxhdpi/ic_launcher_foreground.png"
     },
     {
         "merged": "com.locventure.app-merged_res-40:/drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
@@ -96,8 +116,16 @@
         "source": "com.locventure.app-main-41:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.locventure.app-main-41:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
         "merged": "com.locventure.app-merged_res-40:/mipmap-xhdpi_ic_launcher.png.flat",
         "source": "com.locventure.app-main-41:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_profilelogo.jpg.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_profilelogo.jpg"
     },
     {
         "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_searchbutton.png.flat",
@@ -114,5 +142,13 @@
     {
         "merged": "com.locventure.app-merged_res-40:/mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "com.locventure.app-main-41:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-ldpi_ic_launcher.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-ldpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-xhdpi/ic_launcher_foreground.png"
     }
 ]

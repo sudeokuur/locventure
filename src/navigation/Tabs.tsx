@@ -3,6 +3,7 @@ import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 import CategoriesScreen from '../screens/CategoriesScreen';
 import HomePage from '../screens/HomePage';
+import ProfileScreen from '../screens/ProfileScreen';
 import SearchScreen from '../screens/SearchScreen';
 
 const Tab = createBottomTabNavigator();
@@ -55,12 +56,12 @@ const Tabs: React.FC = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={CategoriesScreen}
+        component={ProfileScreen}
         options={{
           tabBarIcon: ({ color }) => (
             <Image
               style={styles.bottomTabIcon}
-              source={require('../assets/profilelogo.jpg')}
+              source={require('../assets/profilelogofortab.jpg')}
             />
           ),
           tabBarLabel: 'Profile'

@@ -8,12 +8,11 @@ import ProfileScreen from "../screens/ProfileScreen";
 import SearchScreen from "../screens/SearchScreen";
 import SignUpScreen from "../screens/SignUpScreen";
 import Tabs from './Tabs';
-
 const Stack = createStackNavigator();
 
 const MyStack: React.FC = () => {
   return (
-    <Stack.Navigator initialRouteName="LetsGetStarted" screenOptions={{headerShown: false}}>
+    <Stack.Navigator  screenOptions={{headerShown: false}}>
       <Stack.Screen name="Tabs" component={Tabs}/>
       <Stack.Screen name="HomePage" component={HomePage}/>
       <Stack.Screen name="LetsGetStarted" component={LetsGetStarted}/>
@@ -22,6 +21,7 @@ const MyStack: React.FC = () => {
       <Stack.Screen name="SignUp" component={SignUpScreen}/>
       <Stack.Screen name="Profile" component={ProfileScreen}/>
       <Stack.Screen name="EventDetail" component={EventDetailScreen}/>      
+
     </Stack.Navigator>
   );
 }

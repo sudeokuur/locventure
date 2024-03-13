@@ -24,49 +24,49 @@ const Categories: React.FC<CategoriesProps> = ({ onSelectCategory }) => {
     <ScrollView contentContainerStyle={styles.container}>
       <TouchableOpacity
         style={styles.categoryButton}
-        onPress={() => handleCategorySelect('party')}
+        onPress={() => handleCategorySelect('Party')}
       >
         <Image source={partyIcon} style={styles.categoryImage} />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.categoryButton}
-        onPress={() => handleCategorySelect('concert')}
+        onPress={() => handleCategorySelect('Concert')}
       >
         <Image source={concertIcon} style={styles.categoryImage} />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.categoryButton}
-        onPress={() => handleCategorySelect('theatre')}
+        onPress={() => handleCategorySelect('Theater')}
       >
         <Image source={theatreIcon} style={styles.categoryImage} />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.categoryButton}
-        onPress={() => handleCategorySelect('camping')}
+        onPress={() => handleCategorySelect('Camping')}
       >
         <Image source={campingIcon} style={styles.categoryImage} />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.categoryButton}
-        onPress={() => handleCategorySelect('familyfriendly')}
+        onPress={() => handleCategorySelect('FamilyFriendly')}
       >
         <Image source={familyFriendlyIcon} style={styles.categoryImage} />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.categoryButton}
-        onPress={() => handleCategorySelect('sport')}
+        onPress={() => handleCategorySelect('Sport')}
       >
         <Image source={sportIcon} style={styles.categoryImage} />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.categoryButton}
-        onPress={() => handleCategorySelect('festival')}
+        onPress={() => handleCategorySelect('Festival')}
       >
         <Image source={festivalIcon} style={styles.categoryImage} />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.categoryButton}
-        onPress={() => handleCategorySelect('outdoor')}
+        onPress={() => handleCategorySelect('Outdoor')}
       >
         <Image source={outdoorIcon} style={styles.categoryImage} />
       </TouchableOpacity>

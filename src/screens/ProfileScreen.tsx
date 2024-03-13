@@ -1,8 +1,6 @@
-// ProfileScreen.tsx
-
-import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
+import React, { useEffect, useState } from 'react';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
 const ProfileScreen: React.FC = () => {
   const [userName, setUserName] = useState('');
@@ -11,7 +9,7 @@ const ProfileScreen: React.FC = () => {
   const [location, setLocation] = useState('');
 
   useEffect(() => {
-    // Firestore'dan kullanıcı bilgilerini al
+    // Fetch user data from Firestore
     const fetchUserData = async () => {
       try {
         const userDoc = await firestore().collection('users').doc('USER_ID').get();
@@ -24,7 +22,7 @@ const ProfileScreen: React.FC = () => {
           setLocation(userData.location);
         }
       } catch (error) {
-        console.error('Kullanıcı bilgileri getirilirken hata oluştu:', error);
+        console.error('Error fetching user data:', error);
       }
     };
 
@@ -33,31 +31,31 @@ const ProfileScreen: React.FC = () => {
 
   const handleUpdateProfile = async () => {
     try {
-      // Firestore'a güncellenmiş kullanıcı bilgilerini kaydet
+      // Update user profile in Firestore
       await firestore().collection('users').doc('USER_ID').update({
         userName,
         phoneNumber,
         email,
         location,
       });
-      console.log('Profil bilgileri güncellendi!');
+      console.log('Profile updated successfully!');
     } catch (error) {
-      console.error('Profil bilgileri güncellenirken hata oluştu:', error);
+      console.error('Error updating profile:', error);
     }
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Profil</Text>
+    <View style={[styles.container, { backgroundColor: 'black' }]}>
+      <Text style={styles.header}>Profile</Text>
       <TextInput
         style={styles.input}
-        placeholder="Ad Soyad"
+        placeholder="Full Name"
         value={userName}
         onChangeText={(text) => setUserName(text)}
       />
       <TextInput
         style={styles.input}
-        placeholder="Telefon Numarası"
+        placeholder="Phone Number"
         value={phoneNumber}
         onChangeText={(text) => setPhoneNumber(text)}
       />
@@ -69,11 +67,11 @@ const ProfileScreen: React.FC = () => {
       />
       <TextInput
         style={styles.input}
-        placeholder="Lokasyon"
+        placeholder="Location"
         value={location}
         onChangeText={(text) => setLocation(text)}
       />
-      <Button title="Profil Güncelle" onPress={handleUpdateProfile} />
+      <Button title="Update Profile" onPress={handleUpdateProfile} color="purple" />
     </View>
   );
 };
@@ -87,13 +85,16 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 16,
+    color: 'white',
   },
   input: {
     marginBottom: 16,
     padding: 12,
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: 'darkgray',
     borderRadius: 8,
+    backgroundColor: 'darkgray',
+    color: 'black',
   },
 });
 

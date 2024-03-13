@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+color ic_launcher_background
 drawable node_modules_reactnavigation_elements_src_assets_backicon
 drawable node_modules_reactnavigation_elements_src_assets_backiconmask
 drawable rn_edit_text_material
@@ -14,10 +15,12 @@ drawable src_assets_categories_theatre
 drawable src_assets_categorybutton
 drawable src_assets_homebutton
 drawable src_assets_letsgetstarted
+drawable src_assets_profilelogo
 drawable src_assets_searchbutton
 integer react_native_dev_server_port
 integer react_native_inspector_proxy_port
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string app_name
 string default_web_client_id

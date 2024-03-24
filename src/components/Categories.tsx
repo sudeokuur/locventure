@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native'; // Import useNavigation hook
 import React from 'react';
 import { Image, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
@@ -10,14 +11,17 @@ import outdoorIcon from '../assets/categories/outdoor.png';
 import partyIcon from '../assets/categories/party.png';
 import sportIcon from '../assets/categories/sport.png';
 import theatreIcon from '../assets/categories/theatre.png';
-//yaşasın
 interface CategoriesProps {
   onSelectCategory: (category: string) => void;
 }
 
 const Categories: React.FC<CategoriesProps> = ({ onSelectCategory }) => {
+  const navigation = useNavigation(); // Initialize navigation hook
+
   const handleCategorySelect = (category: string) => {
     onSelectCategory(category);
+    // Navigate to SelectedEventScreen with the selected category
+    navigation.navigate('SelectedEventScreen', { eventType: category });
   };
 
   return (
@@ -70,6 +74,7 @@ const Categories: React.FC<CategoriesProps> = ({ onSelectCategory }) => {
       >
         <Image source={outdoorIcon} style={styles.categoryImage} />
       </TouchableOpacity>
+      {/* Other TouchableOpacity components for different categories */}
     </ScrollView>
   );
 };

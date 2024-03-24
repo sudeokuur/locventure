@@ -10,6 +10,7 @@ interface EventProps {
     eventLocation: string;
     eventDescription: string;
     eventImage: string; // Assuming eventImage is a URL to the image
+    eventType: string;
   };
 }
 
@@ -31,6 +32,7 @@ const Event: React.FC<EventProps> = ({ event }) => {
           <Text style={styles.title}>{event.eventName}</Text>
           <Text style={styles.details}>Date: {event.eventDate}</Text>
           <Text style={styles.details}>Location: {event.eventLocation}</Text>
+          <Text style={styles.details}>Category: {event.eventType}</Text>
           <Text style={styles.details}>Description: {event.eventDescription}</Text>
         </View>
       </ImageBackground>

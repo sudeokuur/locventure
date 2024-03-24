@@ -57,6 +57,8 @@ const EventDetail: React.FC<EventDetailProps> = ({ route }) => {
       <Text style={styles.title}>{event.eventName}</Text>
       <Text style={styles.details}>Date: {event.eventDate}</Text>
       <Text style={styles.details}>Location: {event.eventLocation}</Text>
+      <Text style={styles.details}>Category: {event.eventType}</Text>
+
       {event.eventDescription && (
         <Text style={styles.details}>Description: {event.eventDescription}</Text>
       )}

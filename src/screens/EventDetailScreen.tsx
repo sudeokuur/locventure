@@ -3,29 +3,6 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-// Firestore'da saklanacak veri modeli
-// Firestore'da saklanacak veri modeli
-interface EventResponse {
-  userId: string; // Kullanıcının kimlik bilgisi
-  eventId: string; // Etkinliğin kimlik bilgisi
-  response: 'yes' | 'maybe' | 'no'; // Yanıt seçeneği
-}
-
-// Kullanıcının yanıtlarını güncellemek için Firestore işlevi
-const updateEventResponse = async (userId: string, eventId: string, response: 'yes' | 'maybe' | 'no') => {
-  try {
-    // Firestore'daki uygun koleksiyona yanıtı ekleyin veya güncelleyin
-    await firebase.firestore().collection('eventResponses').doc(userId + eventId).set({
-      userId,
-      eventId,
-      response,
-    });
-    console.log('Event response updated successfully!');
-  } catch (error) {
-    console.error('Error updating event response:', error);
-  }
-};
-
 const EventDetailScreen = ({ route }) => {
   const { event } = route.params;
   const navigation = useNavigation();
@@ -42,13 +19,12 @@ const EventDetailScreen = ({ route }) => {
     await updateEventResponse(userId, event.id, response);
     setResponse(response);
   };
+
   const isEventPast = (timestamp) => {
     const currentDate = new Date();
     const eventDate = timestamp.toDate();
     return currentDate > eventDate;
   };
-
-
 
   return (
     <View style={styles.container}>
@@ -78,6 +54,11 @@ const EventDetailScreen = ({ route }) => {
             <Text style={styles.detailText}>{event.eventType}</Text>
           </View>
         </View>
+        {response && (
+          <View style={styles.responseContainer}>
+            <Text style={styles.responseText}>Your Response: {response}</Text>
+          </View>
+        )}
         {!response && !isEventPast(event.eventDate) && (
           <View style={styles.responseContainer}>
             <TouchableOpacity style={styles.responseButton} onPress={() => updateResponse('yes')}>
@@ -154,6 +135,11 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   responseButtonText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  responseText: {
     fontSize: 18,
     fontWeight: 'bold',
     color: 'white',

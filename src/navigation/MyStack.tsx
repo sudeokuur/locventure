@@ -1,4 +1,5 @@
-import { createStackNavigator } from "@react-navigation/stack";
+
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import EventDetailScreen from '../screens/EventDetailScreen';
 import HomePage from "../screens/HomePage";
@@ -7,13 +8,11 @@ import LoginScreen from "../screens/LoginScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import SearchScreen from "../screens/SearchScreen";
 import SignUpScreen from "../screens/SignUpScreen";
-import Tabs from './Tabs';
 const Stack = createStackNavigator();
 
 const MyStack: React.FC = () => {
   return (
     <Stack.Navigator  screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Tabs" component={Tabs}/>
       <Stack.Screen name="HomePage" component={HomePage}/>
       <Stack.Screen name="LetsGetStarted" component={LetsGetStarted}/>
       <Stack.Screen name="Search" component={SearchScreen}/>
@@ -26,4 +25,4 @@ const MyStack: React.FC = () => {
   );
 }
 
-export default MyStack;
+export default MyStack; 

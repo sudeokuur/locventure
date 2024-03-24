@@ -87,8 +87,8 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   categoryImage: {
-    width: 220,
-    height: 100,
+    width: 300,
+    height: 110,
     borderRadius: 40,
   },
 });

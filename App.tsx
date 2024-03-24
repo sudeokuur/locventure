@@ -1,16 +1,12 @@
-import { NavigationContainer } from "@react-navigation/native";
-import React from "react";
-import { StyleSheet } from "react-native";
-import MyStack from "./src/navigation/MyStack";
-
-const App = () => {
+import { NavigationContainer } from '@react-navigation/native';
+import React from 'react';
+import MyStack from './src/navigation/MyStack';
+const App: React.FC = () => {
   return (
     <NavigationContainer>
-      <MyStack/>
+      <MyStack />
     </NavigationContainer>
-  )
+  );
 }
 
-export default App
-
-const styles = StyleSheet.create({})
+export default App;

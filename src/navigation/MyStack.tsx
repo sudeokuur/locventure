@@ -11,13 +11,15 @@ const Stack = createStackNavigator();
 
 const MyStack: React.FC = () => {
   return (
-    <Stack.Navigator  screenOptions={{headerShown: false}}>
-      {/* You can remove the individual screen components and replace them with Tabs */}
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      {}
+      <Stack.Screen name="LetsGetStarted" component={LetsGetStarted}/>
+
+      {}
       <Stack.Screen name="Tabs" component={Tabs} />
       <Stack.Screen name="SelectedEventScreen" component={SelectedEventScreen}/>
       <Stack.Screen name="EventDetail" component={EventDetailScreen}/>      
-      {/* You can keep other screens as needed */}
-      <Stack.Screen name="LetsGetStarted" component={LetsGetStarted}/>
+      {}
       <Stack.Screen name="Login" component={LoginScreen}/>
       <Stack.Screen name="SignUp" component={SignUpScreen}/>
 

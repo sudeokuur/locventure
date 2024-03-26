@@ -1,13 +1,57 @@
 import firebase from '@react-native-firebase/app';
 import { useNavigation } from '@react-navigation/native';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
+
+const updateEventResponse = async (userId, eventId, response) => {
+  try {
+    const eventRef = firebase.firestore().collection('events').doc(eventId);
+    await eventRef.update({
+      [`responses.${userId}`]: response
+    });
+    
+    console.log('Event response updated successfully');
+  } catch (error) {
+    console.error('Error updating event response:', error);
+  }
+};
+
+const getUserEventResponse = async (userId, eventId) => {
+  try {
+    const eventRef = firebase.firestore().collection('events').doc(eventId);
+    const eventDoc = await eventRef.get();
+      if (eventDoc.exists) {
+      const eventData = eventDoc.data();
+      
+      if (eventData.responses && eventData.responses[userId]) {
+        return eventData.responses[userId];
+      }
+    }
+    
+    return null;
+  } catch (error) {
+    console.error('Error getting user event response:', error);
+    return null; 
+  }
+};
 
 const EventDetailScreen = ({ route }) => {
   const { event } = route.params;
   const navigation = useNavigation();
 
   const [response, setResponse] = useState(null);
+  const [userResponse, setUserResponse] = useState(null);
+
+  useEffect(() => {
+    // Check if the current user has already responded to the event
+    const checkUserResponse = async () => {
+      const userId = firebase.auth().currentUser.uid;
+      const userResponse = await getUserEventResponse(userId, event.id);
+      setUserResponse(userResponse);
+    };
+    checkUserResponse();
+  }, [event.id]);
 
   const formatDate = (timestamp) => {
     const date = timestamp.toDate();
@@ -18,6 +62,7 @@ const EventDetailScreen = ({ route }) => {
     const userId = firebase.auth().currentUser.uid;
     await updateEventResponse(userId, event.id, response);
     setResponse(response);
+    setUserResponse(response); // Update userResponse state
   };
 
   const isEventPast = (timestamp) => {
@@ -54,12 +99,12 @@ const EventDetailScreen = ({ route }) => {
             <Text style={styles.detailText}>{event.eventType}</Text>
           </View>
         </View>
-        {response && (
+        {userResponse && (
           <View style={styles.responseContainer}>
-            <Text style={styles.responseText}>Your Response: {response}</Text>
+            <Text style={styles.responseText}>Your Response: {userResponse}</Text>
           </View>
         )}
-        {!response && !isEventPast(event.eventDate) && (
+        {!userResponse && !isEventPast(event.eventDate) && (
           <View style={styles.responseContainer}>
             <TouchableOpacity style={styles.responseButton} onPress={() => updateResponse('yes')}>
               <Text style={styles.responseButtonText}>Yes</Text>
@@ -72,7 +117,7 @@ const EventDetailScreen = ({ route }) => {
             </TouchableOpacity>
           </View>
         )}
-        {(response !== null || isEventPast(event.eventDate)) && (
+        {(userResponse !== null || isEventPast(event.eventDate)) && (
           <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
             <Text style={styles.backButtonText}>Back</Text>
           </TouchableOpacity>
@@ -126,10 +171,10 @@ const styles = StyleSheet.create({
   responseContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: 16,
+    marginTop: 200,
   },
   responseButton: {
-    backgroundColor: 'purple',
+    backgroundColor: 'green',
     paddingVertical: 12,
     paddingHorizontal: 24,
     borderRadius: 8,

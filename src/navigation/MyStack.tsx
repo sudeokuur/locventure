@@ -13,10 +13,11 @@ const MyStack: React.FC = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       {}
-      <Stack.Screen name="LetsGetStarted" component={LetsGetStarted}/>
+      <Stack.Screen name="Tabs" component={Tabs} />
+
 
       {}
-      <Stack.Screen name="Tabs" component={Tabs} />
+      <Stack.Screen name="LetsGetStarted" component={LetsGetStarted}/>
       <Stack.Screen name="SelectedEventScreen" component={SelectedEventScreen}/>
       <Stack.Screen name="EventDetail" component={EventDetailScreen}/>      
       {}

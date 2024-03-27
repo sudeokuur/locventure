@@ -1,61 +1,68 @@
 import { firebase } from '@react-native-firebase/firestore';
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
-const SelectedEventScreen: React.FC<{ route: any }> = ({ route }) => {
-  const { events } = route.params;
+const SelectedEventScreen: React.FC = () => {
   const [selectedCategoryEvents, setSelectedCategoryEvents] = useState<any[]>([]);
 
   useEffect(() => {
-    if (Array.isArray(events)) {
-      setSelectedCategoryEvents(events);
-    } else {
-      console.error('Events data is not an array:', events);
+    fetchEventsForCategory('Concert');
+  }, []);
+
+  const fetchEventsForCategory = async (eventType: string) => {
+    try {
+      const db = firebase.firestore();
+      const snapshot = await db.collection('events').where('eventType', '==', eventType).get();
+      const categoryEventsData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      
+      setSelectedCategoryEvents(categoryEventsData);
+    } catch (error) {
+      console.error('Error fetching eventsssssss for category:', error);
     }
-  }, [events]);
-
-  const renderEvent = (event: any) => {
-    // Format eventDate if it's a Firestore Timestamp
-    const formattedDate = event.eventDate instanceof firebase.firestore.Timestamp
-      ? event.eventDate.toDate().toLocaleDateString()
-      : 'Unknown';
-
-    return (
-      <View key={event.id} style={styles.eventItem}>
-        <Text style={styles.eventName}>{event.eventName}</Text>
-        <Text>Date: {formattedDate}</Text>
-        {/* Render other event details */}
-        {/* For example: <Text>Location: {event.eventLocation}</Text> */}
-      </View>
-    );
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Selected Events</Text>
-      {selectedCategoryEvents.map(event => renderEvent(event))}
-    </View>
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Selected Category Events</Text>
+        {selectedCategoryEvents.map(event => (
+          <View key={event.id} style={styles.eventItem}>
+            <Text style={styles.eventName}>{event.eventName}</Text>
+            {/* Render other event details */}
+            {<Text>Location: {event.eventLocation}</Text> }
+          </View>
+        ))}
+      </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 16,
+    flexGrow: 1,
+    paddingVertical: 16,
+    paddingHorizontal: 16,
     backgroundColor: 'black',
   },
-  title: {
+  section: {
+    marginBottom: 32,
+  },
+  sectionTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: 'white',
     marginBottom: 16,
+    color: 'white',
   },
   eventItem: {
     marginBottom: 16,
+    borderRadius: 8,
+    padding: 16,
+    backgroundColor: '#333333',
   },
   eventName: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
+    marginBottom: 8,
     color: 'white',
   },
 });

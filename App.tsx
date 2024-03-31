@@ -1,12 +1,12 @@
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet } from "react-native";
-import MyStack from "./src/navigation/MyStack";
+import AppStack from "./src/navigation/AppStack";
 
 const App = () => {
   return (
     <NavigationContainer>
-      <MyStack/>
+      <AppStack/>
     </NavigationContainer>
   )
 }

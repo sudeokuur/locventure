@@ -9,7 +9,7 @@ import Tabs from './Tabs'; // Import your bottom tab navigator component
 
 const Stack = createStackNavigator();
 
-const MyStack: React.FC = () => {
+const AppStack: React.FC = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       {}
@@ -28,4 +28,4 @@ const MyStack: React.FC = () => {
   );
 }
 
-export default MyStack;
+export default AppStack;

@@ -13,18 +13,19 @@ const CategoriesScreen: React.FC = () => {
       const db = firebase.firestore();
       const snapshot = await db.collection('events').where('eventType', '==', eventType).get();
       const categoryEventsData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-
+  
       console.log('categoryEventsData:', categoryEventsData); // Log categoryEventsData
-
+  
       if (categoryEventsData.length === 0) {
         setError(`No events found for category: ${eventType}`);
       } else {
         setError('');
-        // Navigate to SelectedEventScreen with the category events data
-        navigation.navigate('SelectedEventScreen', { events: categoryEventsData });
+        // Navigate to SelectedEventScreen with the selected category
+        navigation.navigate('SelectedEventScreen', { category: eventType });
       }
     } catch (error) {
       console.error('Error fetching events for category:', error);
+      setError('Error fetching events. Please try again later.');
     }
   };
 

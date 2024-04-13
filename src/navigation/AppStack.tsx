@@ -1,6 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import EventDetailScreen from '../screens/EventDetailScreen';
+import HomePage from '../screens/HomePage';
 import LetsGetStarted from '../screens/LetsGetStarted';
 import LoginScreen from "../screens/LoginScreen";
 import SelectedEventScreen from '../screens/SelectedEventScreen';
@@ -23,6 +24,8 @@ const AppStack: React.FC = () => {
       {}
       <Stack.Screen name="Login" component={LoginScreen}/>
       <Stack.Screen name="SignUp" component={SignUpScreen}/>
+      <Stack.Screen name="HomePage" component={HomePage}/>
+
 
     </Stack.Navigator>
   );

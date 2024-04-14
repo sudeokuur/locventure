@@ -4,6 +4,7 @@ import EventDetailScreen from '../screens/EventDetailScreen';
 import HomePage from '../screens/HomePage';
 import LetsGetStarted from '../screens/LetsGetStarted';
 import LoginScreen from "../screens/LoginScreen";
+import RateEventScreen from '../screens/RateEventScreen';
 import SelectedEventScreen from '../screens/SelectedEventScreen';
 import SignUpScreen from "../screens/SignUpScreen";
 import Tabs from './Tabs'; // Import your bottom tab navigator component
@@ -25,6 +26,7 @@ const AppStack: React.FC = () => {
       <Stack.Screen name="Login" component={LoginScreen}/>
       <Stack.Screen name="SignUp" component={SignUpScreen}/>
       <Stack.Screen name="HomePage" component={HomePage}/>
+      <Stack.Screen name="RateEvent" component={RateEventScreen}/>
 
 
     </Stack.Navigator>

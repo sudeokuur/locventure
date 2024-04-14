@@ -1,7 +1,8 @@
 import firebase from '@react-native-firebase/app';
 import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
-import { ImageBackground, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
 
 const updateEventResponse = async (userId, eventId, response) => {
   try {
@@ -9,6 +10,7 @@ const updateEventResponse = async (userId, eventId, response) => {
     await eventRef.update({
       [`responses.${userId}`]: response
     });
+    
     console.log('Event response updated successfully');
   } catch (error) {
     console.error('Error updating event response:', error);
@@ -19,12 +21,14 @@ const getUserEventResponse = async (userId, eventId) => {
   try {
     const eventRef = firebase.firestore().collection('events').doc(eventId);
     const eventDoc = await eventRef.get();
-    if (eventDoc.exists) {
+      if (eventDoc.exists) {
       const eventData = eventDoc.data();
+      
       if (eventData.responses && eventData.responses[userId]) {
         return eventData.responses[userId];
       }
     }
+    
     return null;
   } catch (error) {
     console.error('Error getting user event response:', error);
@@ -38,10 +42,9 @@ const EventDetailScreen = ({ route }) => {
 
   const [response, setResponse] = useState(null);
   const [userResponse, setUserResponse] = useState(null);
-  const [rating, setRating] = useState(0);
-  const [comment, setComment] = useState('');
 
   useEffect(() => {
+    // Check if the current user has already responded to the event
     const checkUserResponse = async () => {
       const userId = firebase.auth().currentUser.uid;
       const userResponse = await getUserEventResponse(userId, event.id);
@@ -59,25 +62,13 @@ const EventDetailScreen = ({ route }) => {
     const userId = firebase.auth().currentUser.uid;
     await updateEventResponse(userId, event.id, response);
     setResponse(response);
-    setUserResponse(response);
+    setUserResponse(response); // Update userResponse state
   };
 
   const isEventPast = (timestamp) => {
     const currentDate = new Date();
     const eventDate = timestamp.toDate();
     return currentDate > eventDate;
-  };
-
-  const handleRatingChange = (value) => {
-    setRating(value);
-  };
-
-  const handleCommentChange = (text) => {
-    setComment(text);
-  };
-
-  const navigateToRateEventScreen = () => {
-    navigation.navigate('RateEvent', { eventId: event.id });
   };
 
   return (
@@ -123,29 +114,6 @@ const EventDetailScreen = ({ route }) => {
             </TouchableOpacity>
             <TouchableOpacity style={styles.responseButton} onPress={() => updateResponse('no')}>
               <Text style={styles.responseButtonText}>No</Text>
-            </TouchableOpacity>
-          </View>
-        )}
-        {(userResponse === 'yes' && isEventPast(event.eventDate)) && (
-          <View style={styles.ratingContainer}>
-            <Text style={styles.ratingText}>Rate this event:</Text>
-            <View style={styles.starsContainer}>
-              {[1, 2, 3, 4, 5].map((value) => (
-                <TouchableOpacity
-                  key={value}
-                  style={[styles.star, value <= rating ? styles.starSelected : null]}
-                  onPress={() => handleRatingChange(value)}
-                />
-              ))}
-            </View>
-            <TextInput
-              style={styles.commentInput}
-              placeholder="Add a comment..."
-              value={comment}
-              onChangeText={handleCommentChange}
-            />
-            <TouchableOpacity style={styles.rateButton} onPress={navigateToRateEventScreen}>
-              <Text style={styles.rateButtonText}>Rate Event</Text>
             </TouchableOpacity>
           </View>
         )}
@@ -229,45 +197,6 @@ const styles = StyleSheet.create({
   },
   backButtonText: {
     fontSize: 18,
-    color: 'white',
-  },
-  ratingContainer: {
-    alignItems: 'center',
-    marginTop: 16,
-  },
-  ratingText: {
-    fontSize: 18,
-    color: 'white',
-    marginBottom: 8,
-  },
-  starsContainer: {
-    flexDirection: 'row',
-    marginBottom: 8,
-  },
-  star: {
-    fontSize: 24,
-    color: 'white',
-    marginRight: 8,
-  },
-  starSelected: {
-    color: 'gold',
-  },
-  commentInput: {
-    backgroundColor: 'white',
-    width: '80%',
-    borderRadius: 8,
-    padding: 8,
-    marginBottom: 8,
-  },
-  rateButton: {
-    backgroundColor: 'green',
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: 8,
-  },
-  rateButtonText: {
-    fontSize: 18,
-    fontWeight: 'bold',
     color: 'white',
   },
 });

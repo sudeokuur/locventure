@@ -35,22 +35,20 @@ const HomePage: React.FC = () => {
         const db = firebase.firestore();
         const snapshot = await db.collection('events').get();
         const currentDate = new Date();
-    
+
         const upcomingEventsData = [];
         const pastEventsData = [];
-    
+
         snapshot.forEach((doc) => {
           const eventData = { id: doc.id, ...doc.data() };
           const eventDate = new Date(eventData.eventDate._seconds * 1000);
-    
+
           if (eventDate >= currentDate && eventData.eventCity === userLocation) {
             upcomingEventsData.push({ ...eventData, eventDate: eventDate.toLocaleString() });
           }
-          if (eventDate < currentDate && eventData.eventCity === userLocation) {
-            pastEventsData.push({ ...eventData, eventDate: eventDate.toLocaleString() });
-          }
+          pastEventsData.push({ ...eventData, eventDate: eventDate.toLocaleString() });
         });
-    
+
         setUpcomingEvents(upcomingEventsData);
         setPastEvents(pastEventsData);
       } catch (error) {
@@ -71,8 +69,8 @@ const HomePage: React.FC = () => {
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
         <Text style={styles.welcomeMessage}>Welcome, {userFirstName}!</Text>
-        <View style={styles.eventsForLocation}>
-          <Text style={styles.eventsForLocationText}>Events for your location: {userLocation}</Text>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Events for your location: {userLocation}</Text>
         </View>
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Upcoming Events</Text>

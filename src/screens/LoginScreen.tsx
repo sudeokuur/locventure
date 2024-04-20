@@ -24,7 +24,7 @@ const LoginScreen = () => {
 
       console.log(signInResult);
       Alert.alert("Logged in!");
-      navigation.navigate("HomePage");
+      navigation.navigate("Main");
     } catch (error) {
       console.error(error);
       Alert.alert(error.nativeErrorMessage);
@@ -54,7 +54,7 @@ const LoginScreen = () => {
           style={styles.input}
         />
         <DefButton title={"Sign In"} onPress={LoginWithEmailandPassword} style={styles.loginButton} />
-        <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+        <TouchableOpacity onPress={() => navigation.navigate("Main")}>
         </TouchableOpacity>
       </View>
     </View>

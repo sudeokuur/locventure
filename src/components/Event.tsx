@@ -23,29 +23,36 @@ const Event: React.FC<EventProps> = ({ event }) => {
 
   return (
     <TouchableOpacity onPress={handleEventPress}>
-      <ImageBackground
-        source={{ uri: event.eventImage }}
-        style={styles.background}
-        imageStyle={{ borderRadius: 8 }}
-      >
-        <View style={styles.container}>
-          <Text style={styles.title}>{event.eventName}</Text>
-          <Text style={styles.details}>Date: {event.eventDate}</Text>
-          <Text style={styles.details}>Location: {event.eventCity}</Text>
-          <Text style={styles.details}>Category: {event.eventType}</Text>
-          <Text style={styles.details}>Description: {event.eventDescription}</Text>
-        </View>
-      </ImageBackground>
+      <View style={styles.eventContainer}>
+        <ImageBackground
+          source={{ uri: event.eventImage }}
+          style={styles.background}
+          imageStyle={{ borderRadius: 8 }}
+        >
+          <View style={styles.container}>
+            <Text style={styles.title}>{event.eventName}</Text>
+            <Text style={styles.details}>Date: {event.eventDate}</Text>
+            <Text style={styles.details}>Location: {event.eventCity}</Text>
+            <Text style={styles.details}>Category: {event.eventType}</Text>
+            <Text style={styles.details}>Description: {event.eventDescription}</Text>
+          </View>
+        </ImageBackground>
+      </View>
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
+  eventContainer: {
+    width: '100%',
+    height: 200, // Set a fixed height for the Event component
+    marginBottom: 16,
+  },
   container: {
     padding: 16,
   },
   background: {
-    marginBottom: 16,
+    flex: 1,
     borderRadius: 8,
     overflow: 'hidden',
     resizeMode: 'cover',

@@ -35,26 +35,28 @@ const HomePage: React.FC = () => {
         const db = firebase.firestore();
         const snapshot = await db.collection('events').get();
         const currentDate = new Date();
-
-        const upcomingEventsData = [];
+    
+        const locationBasedEventsData = [];
         const pastEventsData = [];
-
+    
         snapshot.forEach((doc) => {
           const eventData = { id: doc.id, ...doc.data() };
           const eventDate = new Date(eventData.eventDate._seconds * 1000);
-
-          if (eventDate >= currentDate && eventData.eventCity === userLocation) {
-            upcomingEventsData.push({ ...eventData, eventDate: eventDate.toLocaleString() });
+    
+          if (eventDate < currentDate) {
+            pastEventsData.push({ ...eventData, eventDate: eventDate.toLocaleString() });
           }
-          pastEventsData.push({ ...eventData, eventDate: eventDate.toLocaleString() });
+    
+          locationBasedEventsData.push({ ...eventData, eventDate: eventDate.toLocaleString() });
         });
-
-        setUpcomingEvents(upcomingEventsData);
+    
+        setUpcomingEvents(locationBasedEventsData);
         setPastEvents(pastEventsData);
       } catch (error) {
         console.error('Error fetching events from Firestore:', error);
       }
     };
+    
 
     fetchUserInfo();
     fetchEvents();

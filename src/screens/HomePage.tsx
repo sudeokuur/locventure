@@ -1,72 +1,66 @@
+import auth from '@react-native-firebase/auth';
 import { firebase } from '@react-native-firebase/firestore';
 import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
-import { Button, FlatList, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
+import Event from '../components/Event';
 
 const HomePage: React.FC = () => {
   const [upcomingEvents, setUpcomingEvents] = useState<any[]>([]);
   const [pastEvents, setPastEvents] = useState<any[]>([]);
+  const [userFirstName, setUserFirstName] = useState<string>('');
+  const [userLocation, setUserLocation] = useState<string>('');
   const navigation = useNavigation();
 
   useEffect(() => {
+    const fetchUserInfo = async () => {
+      try {
+        const currentUser = auth().currentUser;
+        if (currentUser) {
+          const userId = currentUser.uid;
+          const userDoc = await firebase.firestore().collection('users').doc(userId).get();
+          const userData = userDoc.data();
+          if (userData) {
+            setUserFirstName(userData.firstName);
+            setUserLocation(userData.location);
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching user information:', error);
+      }
+    };
+
     const fetchEvents = async () => {
       try {
         const db = firebase.firestore();
         const snapshot = await db.collection('events').get();
         const currentDate = new Date();
-
-        const eventsData = snapshot.docs
-          .map((doc) => ({ id: doc.id, ...doc.data() }))
-          .filter((event) => {
-            const eventDate = event.eventDate.toDate();
-            return eventDate >= currentDate; // Separate upcoming and past events
-          });
-
-        const pastEventsData = snapshot.docs
-          .map((doc) => ({ id: doc.id, ...doc.data() }))
-          .filter((event) => {
-            const eventDate = event.eventDate.toDate();
-            return eventDate < currentDate; // Separate upcoming and past events
-          });
-
-        setUpcomingEvents(eventsData);
+    
+        const upcomingEventsData = [];
+        const pastEventsData = [];
+    
+        snapshot.forEach((doc) => {
+          const eventData = { id: doc.id, ...doc.data() };
+          const eventDate = new Date(eventData.eventDate._seconds * 1000);
+    
+          if (eventDate >= currentDate && eventData.eventCity === userLocation) {
+            upcomingEventsData.push({ ...eventData, eventDate: eventDate.toLocaleString() });
+          }
+          if (eventDate < currentDate && eventData.eventCity === userLocation) {
+            pastEventsData.push({ ...eventData, eventDate: eventDate.toLocaleString() });
+          }
+        });
+    
+        setUpcomingEvents(upcomingEventsData);
         setPastEvents(pastEventsData);
       } catch (error) {
         console.error('Error fetching events from Firestore:', error);
       }
     };
 
+    fetchUserInfo();
     fetchEvents();
-  }, []);
-
-  const handleEventPress = (event) => {
-    navigation.navigate('EventDetail', { event: event });
-  };
-
-  const renderItem = ({ item }) => {
-    let eventTimeString = '';
-    if (item.eventTime instanceof firebase.firestore.Timestamp) {
-      eventTimeString = item.eventTime.toDate().toLocaleTimeString();
-    } else {
-      eventTimeString = item.eventTime; // Assuming eventTime is already a string
-    }
-
-    return (
-      <TouchableOpacity onPress={() => handleEventPress(item)} style={styles.eventItem}>
-        <ImageBackground
-          source={{ uri: item.eventImage }}
-          style={styles.background}
-          imageStyle={{ borderRadius: 8 }}
-        >
-          <View style={styles.container}>
-            <Text style={[styles.eventName, { color: 'white' }]}>{item.eventName}</Text>
-            <Text style={{ color: 'white' }}>Date: {item.eventDate.toDate().toLocaleDateString()} - {eventTimeString}</Text>
-            <Text style={{ color: 'white' }}>Location: {item.eventLocation}</Text>
-          </View>
-        </ImageBackground>
-      </TouchableOpacity>
-    );
-  };
+  }, [userLocation]);
 
   const handleLogout = () => {
     navigation.navigate('Login');
@@ -76,12 +70,16 @@ const HomePage: React.FC = () => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
+        <Text style={styles.welcomeMessage}>Welcome, {userFirstName}!</Text>
+        <View style={styles.eventsForLocation}>
+          <Text style={styles.eventsForLocationText}>Events for your location: {userLocation}</Text>
+        </View>
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Upcoming Events</Text>
           <FlatList
             data={upcomingEvents}
             keyExtractor={(item) => item.id}
-            renderItem={renderItem}
+            renderItem={({ item }) => <Event event={item} />}
           />
         </View>
         <View style={styles.section}>
@@ -89,8 +87,8 @@ const HomePage: React.FC = () => {
           <FlatList
             data={pastEvents}
             keyExtractor={(item) => item.id}
-            renderItem={renderItem}
-            horizontal={true} // Set FlatList to horizontal mode
+            renderItem={({ item }) => <Event event={item} />}
+            horizontal={true}
           />
         </View>
         <Button title="Logout" onPress={handleLogout} />
@@ -118,19 +116,21 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     color: 'white',
   },
-  eventItem: {
+  welcomeMessage: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    color: 'white',
+  },
+  eventsForLocation: {
+    backgroundColor: 'gray',
+    padding: 10,
     marginBottom: 16,
     borderRadius: 8,
-    overflow: 'hidden',
   },
-  background: {
-    padding: 36,
-    backgroundColor: 'transparent'
-  },
-  eventName: {
-    fontSize: 18,
+  eventsForLocationText: {
+    fontSize: 16,
     fontWeight: 'bold',
-    marginBottom: 8,
     color: 'white',
   },
 });

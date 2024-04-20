@@ -54,18 +54,17 @@ const EventDetailScreen = ({ route }) => {
   }, [event.id]);
 
   const formatDate = (timestamp) => {
+    if (!timestamp || !timestamp.toDate) {
+      return '';
+    }
     const date = timestamp.toDate();
     return date.toLocaleDateString();
   };
-
-  const updateResponse = async (response) => {
-    const userId = firebase.auth().currentUser.uid;
-    await updateEventResponse(userId, event.id, response);
-    setResponse(response);
-    setUserResponse(response); // Update userResponse state
-  };
-
+  
   const isEventPast = (timestamp) => {
+    if (!timestamp || !timestamp.toDate) {
+      return false;
+    }
     const currentDate = new Date();
     const eventDate = timestamp.toDate();
     return currentDate > eventDate;
@@ -84,7 +83,7 @@ const EventDetailScreen = ({ route }) => {
           </View>
           <View style={styles.detailRow}>
             <Text style={styles.detailLabel}>Location:</Text>
-            <Text style={styles.detailText}>{event.eventLocation}</Text>
+            <Text style={styles.detailText}>{event.eventCity}</Text>
           </View>
           <View style={styles.detailRow}>
             <Text style={styles.detailLabel}>Time:</Text>

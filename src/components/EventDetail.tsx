@@ -1,7 +1,7 @@
 import firestore from '@react-native-firebase/firestore'; // Import Firebase Firestore
-import { useNavigation } from '@react-navigation/native';
-import React, { useEffect, useState } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native'; // Import useNavigation hook from react-navigation/native
+import React, { useEffect, useState } from 'react'; // Importing React, useEffect, and useState from React library
+import { Button, StyleSheet, Text, View } from 'react-native'; // Importing necessary components from react-native
 
 interface EventDetailProps {
   route: {
@@ -11,11 +11,13 @@ interface EventDetailProps {
   };
 }
 
+// Functional component definition for EventDetail
 const EventDetail: React.FC<EventDetailProps> = ({ route }) => {
-  const { eventId } = route.params || {};
+  const { eventId } = route.params || {}; // Extracting eventId from route parameters
   const [event, setEvent] = useState<any>(null); // State to store event details
-  const navigation = useNavigation();
+  const navigation = useNavigation(); // Initializing navigation hook
 
+  // useEffect hook to fetch event details when component mounts
   useEffect(() => {
     const fetchEventDetails = async () => {
       try {
@@ -40,10 +42,12 @@ const EventDetail: React.FC<EventDetailProps> = ({ route }) => {
     };
   }, [eventId]); // Effect runs whenever eventId changes
 
+  // Function to handle navigation back
   const handleGoBack = () => {
     navigation.goBack(); // Navigate back when "Go Back" button is pressed
   };
 
+  // If event details are not loaded yet, display loading message
   if (!event) {
     return (
       <View style={styles.container}>
@@ -52,6 +56,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ route }) => {
     );
   }
 
+  // If event details are loaded, display event details and "Go Back" button
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{event.eventName}</Text>
@@ -62,28 +67,29 @@ const EventDetail: React.FC<EventDetailProps> = ({ route }) => {
       {event.eventDescription && (
         <Text style={styles.details}>Description: {event.eventDescription}</Text>
       )}
-      <Button title="Go Back" onPress={handleGoBack} />
+      <Button title="Go Back" onPress={handleGoBack} /> {/* "Go Back" button */}
     </View>
   );
 };
 
+// Styles for EventDetail component
 const styles = StyleSheet.create({
   container: {
-    padding: 16,
+    padding: 16, // Padding for event details container
   },
   title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 8,
+    fontSize: 24, // Font size for event title
+    fontWeight: 'bold', // Bold font weight for event title
+    marginBottom: 8, // Margin bottom for spacing
   },
   details: {
-    fontSize: 18,
-    marginBottom: 8,
+    fontSize: 18, // Font size for event details
+    marginBottom: 8, // Margin bottom for spacing
   },
   errorText: {
-    fontSize: 18,
-    color: 'red',
+    fontSize: 18, // Font size for error message
+    color: 'red', // Text color for error message
   },
 });
 
-export default EventDetail;
+export default EventDetail; // Exporting EventDetail component as default

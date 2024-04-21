@@ -1,34 +1,36 @@
-import firestore from '@react-native-firebase/firestore';
-import React, { useEffect, useState } from 'react';
-import { Button, FlatList, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import firestore from '@react-native-firebase/firestore'; // Import firestore from @react-native-firebase
+import React, { useEffect, useState } from 'react'; // Import React, useEffect, and useState
+import { Button, FlatList, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'; // Import necessary components from react-native
 
+// Functional component definition for SearchScreen
 const SearchScreen: React.FC = () => {
-  const [searchText, setSearchText] = useState<string>('');
-  const [searchResults, setSearchResults] = useState<any[]>([]);
-  const [recentSearches, setRecentSearches] = useState<string[]>([]);
+  const [searchText, setSearchText] = useState<string>(''); // State variable for search text, initialized to an empty string
+  const [searchResults, setSearchResults] = useState<any[]>([]); // State variable for search results, initialized to an empty array
+  const [recentSearches, setRecentSearches] = useState<string[]>([]); // State variable for recent searches, initialized to an empty array
 
   useEffect(() => {
     // Fetch recent searches from storage or initialize an empty array
     const storedRecentSearches = []; // Retrieve recent searches from storage, if any
-    setRecentSearches(storedRecentSearches);
+    setRecentSearches(storedRecentSearches); // Update recent searches state with retrieved recent searches
   }, []);
 
+  // Function to handle search
   const handleSearch = async () => {
-    if (searchText.trim() !== '') {
+    if (searchText.trim() !== '') { // Check if search text is not empty
       try {
-        const db = firestore();
-        const snapshot = await db.collection('events').get();
-        const eventsData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        const db = firestore(); // Get firestore instance
+        const snapshot = await db.collection('events').get(); // Get all documents from 'events' collection
+        const eventsData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })); // Map documents to array of objects
         
         // Filter events based on search text
         const filteredEvents = eventsData.filter(event =>
-          event.eventName.toLowerCase().includes(searchText.toLowerCase())
+          event.eventName.toLowerCase().includes(searchText.toLowerCase()) // Filter events whose name contains the search text (case insensitive)
         );
         
-        setSearchResults(filteredEvents);
+        setSearchResults(filteredEvents); // Update search results state with filtered events
 
         // Add search query to recent searches
-        setRecentSearches(prevSearches => [...prevSearches, searchText]);
+        setRecentSearches(prevSearches => [...prevSearches, searchText]); // Add search text to recent searches state
 
         // Save recent searches to storage
         // Update storage with updated recent searches array
@@ -38,12 +40,13 @@ const SearchScreen: React.FC = () => {
     }
   };
 
+  // Function to clear recent searches
   const clearRecentSearches = () => {
-    // Clear recent searches array and storage
-    setRecentSearches([]);
+    setRecentSearches([]); // Clear recent searches state
     // Clear recent searches from storage
   };
 
+  // Render item function for FlatList
   const renderItem = ({ item }) => (
     <TouchableOpacity style={styles.eventItem}>
       <ImageBackground
@@ -53,8 +56,7 @@ const SearchScreen: React.FC = () => {
       >
         <Text style={styles.eventName}>{item.eventName}</Text>
         <Text style={{ color: 'white' }}>Date: {item.eventDate.toDate().toLocaleDateString()}</Text>
-      <Text style={{ color: 'white' }}>Location: {item.eventLocation}</Text>
-
+        <Text style={{ color: 'white' }}>Location: {item.eventLocation}</Text>
       </ImageBackground>
     </TouchableOpacity>
   );
@@ -65,27 +67,28 @@ const SearchScreen: React.FC = () => {
         style={styles.searchInput}
         placeholder="Search for an event..."
         value={searchText}
-        onChangeText={text => setSearchText(text)}
+        onChangeText={text => setSearchText(text)} // Call setSearchText with the entered text onChangeText
       />
-      <Button title="Search" onPress={handleSearch} />
+      <Button title="Search" onPress={handleSearch} /> // Search button onPress calls handleSearch
       <FlatList
         data={searchResults}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
+        renderItem={renderItem} // Render each item using renderItem function
+        keyExtractor={item => item.id} // Extract unique keys from item ids
       />
       <View style={styles.recentSearchesContainer}>
         <Text style={styles.recentSearchesTitle}>Recent Searches</Text>
         <FlatList
           data={recentSearches}
-          renderItem={({ item }) => <Text style={styles.recentSearch}>{item}</Text>}
-          keyExtractor={(item, index) => index.toString()}
+          renderItem={({ item }) => <Text style={styles.recentSearch}>{item}</Text>} // Render each recent search
+          keyExtractor={(item, index) => index.toString()} // Extract unique keys for recent searches
         />
-        <Button title="Clear Recent Searches" onPress={clearRecentSearches} />
+        <Button title="Clear Recent Searches" onPress={clearRecentSearches} /> // Clear recent searches button onPress calls clearRecentSearches
       </View>
     </View>
   );
 };
 
+// Styles for SearchScreen component
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -134,4 +137,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SearchScreen;
+export default SearchScreen; // Export SearchScreen component as default

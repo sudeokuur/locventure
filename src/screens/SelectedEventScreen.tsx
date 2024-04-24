@@ -37,15 +37,7 @@ const SelectedEventScreen: React.FC<{ route: { params: { category: string } } }>
             </View>
           ))
         ) : (
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <Text style={styles.noEventsText}>No events found for {category} category.</Text> /* Text indicating no events found for the category */
-=======
           <Text style={styles.noEventsText}>No events found for {category} category.</Text>
->>>>>>> parent of 5b0fbce5 (command lines added as supervisor wanted for code review.)
-=======
-          <Text style={styles.noEventsText}>No events found for {category} category.</Text> {/* Text indicating no events found for the category */}
->>>>>>> parent of c849690f (fix commit)
         )}
       </View>
     </ScrollView>

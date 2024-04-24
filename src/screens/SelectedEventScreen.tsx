@@ -39,7 +39,7 @@ const SelectedEventScreen: React.FC<{ route: { params: { category: string } } }>
             </View>
           ))
         ) : (
-          <Text style={styles.noEventsText}>No events found for {category} category.</Text> {/* Text indicating no events found for the category */}
+          <Text style={styles.noEventsText}>No events found for {category} category.</Text> /* Text indicating no events found for the category */
         )}
       </View>
     </ScrollView>

@@ -47,29 +47,37 @@ const SignUpScreen = () => {
     const locationOptions = ["Select Location", "Ankara", "Istanbul", "Izmir"]; // Array of location options
 
     return (
-        <View style={styles.container}> {/* Main container view */}
+        <View style={styles.container}>
+            {/* Main container view */}
             <TouchableOpacity onPress={() => navigation.navigate("LetsGetStarted")} style={styles.backButton}>
-                <Text style={styles.backButtonText}>{'<'}</Text> {/* Back button */}
+                <Text style={styles.backButtonText}>{'<'}</Text>
+                {/* Back button */}
             </TouchableOpacity>
-            <View style={styles.inputsContainer}> {/* Container for input fields */}
-                <Text style={styles.createAccText}>Sign Up</Text> {/* Sign up text */}
+            <View style={styles.inputsContainer}>
+                {/* Container for input fields */}
+                <Text style={styles.createAccText}>Sign Up</Text>
+                {/* Sign up text */}
                 {/* Text input fields for email, password, confirm password, first name, and last name */}
                 <TextInput value={email} onChangeText={text => setEmail(text)} placeholder="Enter Email Address" style={styles.input} />
                 <TextInput value={password} onChangeText={text => setPassword(text)} placeholder="Enter Password" secureTextEntry style={styles.input} />
                 <TextInput value={confirmPassword} onChangeText={text => setConfirmPassword(text)} placeholder="Confirm Password" secureTextEntry style={styles.input} />
                 <TextInput value={firstName} onChangeText={text => setFirstName(text)} placeholder="First Name" style={styles.input} />
                 <TextInput value={lastName} onChangeText={text => setLastName(text)} placeholder="Last Name" style={styles.input} />
-                <View style={styles.locationContainer}> {/* Container for location dropdown */}
-                    <Text style={styles.locationLabel}>Location:</Text> {/* Location label */}
+                <View style={styles.locationContainer}>
+                    {/* Container for location dropdown */}
+                    <Text style={styles.locationLabel}>Location:</Text>
+                    {/* Location label */}
                     {/* Dropdown trigger to select location */}
                     <TouchableOpacity
                         onPress={() => setDropdownVisible(!dropdownVisible)}
                         style={styles.dropdownTrigger}
                     >
-                        <Text style={styles.dropdownText}>{selectedLocation || "Select Location"}</Text> {/* Selected location or default text */}
+                        <Text style={styles.dropdownText}>{selectedLocation || "Select Location"}</Text>
+                        {/* Selected location or default text */}
                     </TouchableOpacity>
-                    {dropdownVisible && ( {/* Dropdown menu */}
-                        <View style={styles.dropdownMenu}> {/* Dropdown menu container */}
+                    {dropdownVisible && (
+                        <View style={styles.dropdownMenu}>
+                            {/* Dropdown menu container */}
                             {/* Render location options */}
                             {locationOptions.map((option, index) => (
                                 <TouchableOpacity
@@ -86,7 +94,8 @@ const SignUpScreen = () => {
                         </View>
                     )}
                 </View>
-                <DefButton style={styles.signUpButton} title="Sign Up" onPress={SignUpTestFn} /> {/* Sign up button */}
+                <DefButton style={styles.signUpButton} title="Sign Up" onPress={SignUpTestFn} />
+                {/* Sign up button */}
             </View>
         </View>
     );

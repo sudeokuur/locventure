@@ -1,22 +1,20 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'; // Importing createBottomTabNavigator from react-navigation/bottom-tabs
-import React from 'react'; // Importing React library
-import { Image, StyleSheet } from 'react-native'; // Importing necessary components from react-native
-import CategoriesScreen from '../screens/CategoriesScreen'; // Importing CategoriesScreen component
-import HomePage from '../screens/HomePage'; // Importing HomePage component
-import ProfileScreen from '../screens/ProfileScreen'; // Importing ProfileScreen component
-import SearchScreen from '../screens/SearchScreen'; // Importing SearchScreen component
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React from 'react';
+import { Image, StyleSheet } from 'react-native';
+import CategoriesScreen from '../screens/CategoriesScreen';
+import HomePage from '../screens/HomePage';
+import ProfileScreen from '../screens/ProfileScreen';
+import SearchScreen from '../screens/SearchScreen';
 
-const Tab = createBottomTabNavigator(); // Creating a bottom tab navigator
+const Tab = createBottomTabNavigator();
 
-// Functional component definition for Tabs
 const Tabs: React.FC = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarStyle: { backgroundColor: 'black' }, // Styling for the bottom tab bar - setting background color to black
+        tabBarStyle: { backgroundColor: 'black' }, // Set background color to black
       }}
     >
-      {/* Home tab */}
       <Tab.Screen
         name="Home"
         component={HomePage}
@@ -24,13 +22,12 @@ const Tabs: React.FC = () => {
           tabBarIcon: ({ color }) => (
             <Image
               style={styles.bottomTabIcon}
-              source={require('../assets/homebutton.png')} // Icon for Home tab
+              source={require('../assets/homebutton.png')}
             />
           ),
-          tabBarLabel: 'Home' // Label for Home tab
+          tabBarLabel: 'Home'
         }}
       />
-      {/* Search tab */}
       <Tab.Screen
         name="Search"
         component={SearchScreen}
@@ -38,13 +35,12 @@ const Tabs: React.FC = () => {
           tabBarIcon: ({ color }) => (
             <Image
               style={styles.bottomTabIcon}
-              source={require('../assets/searchbutton.png')} // Icon for Search tab
+              source={require('../assets/searchbutton.png')}
             />
           ),
-          tabBarLabel: 'Search' // Label for Search tab
+          tabBarLabel: 'Search'
         }}
       />
-      {/* Categories tab */}
       <Tab.Screen
         name="Categories"
         component={CategoriesScreen}
@@ -52,13 +48,12 @@ const Tabs: React.FC = () => {
           tabBarIcon: ({ color }) => (
             <Image
               style={styles.bottomTabIcon}
-              source={require('../assets/categorybutton.png')} // Icon for Categories tab
+              source={require('../assets/categorybutton.png')}
             />
           ),
-          tabBarLabel: 'Categories' // Label for Categories tab
+          tabBarLabel: 'Categories'
         }}
       />
-      {/* Profile tab */}
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}
@@ -66,22 +61,21 @@ const Tabs: React.FC = () => {
           tabBarIcon: ({ color }) => (
             <Image
               style={styles.bottomTabIcon}
-              source={require('../assets/profilelogofortab.jpg')} // Icon for Profile tab
+              source={require('../assets/profilelogofortab.jpg')}
             />
           ),
-          tabBarLabel: 'Profile' // Label for Profile tab
+          tabBarLabel: 'Profile'
         }}
       />
     </Tab.Navigator>
   );
 };
 
-// Styles for Tabs component
 const styles = StyleSheet.create({
   bottomTabIcon: {
-    width: 32, // Width of tab icon
-    height: 32, // Height of tab icon
+    width: 32, 
+    height: 32, 
   },
 });
 
-export default Tabs; // Exporting Tabs component as default
+export default Tabs;

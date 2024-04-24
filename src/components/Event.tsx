@@ -1,6 +1,6 @@
-import { useNavigation } from '@react-navigation/native'; // Importing useNavigation hook from react-navigation/native
-import React from 'react'; // Importing React library
-import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'; // Importing necessary components from react-native
+import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 interface EventProps {
   event: {
@@ -14,29 +14,27 @@ interface EventProps {
   };
 }
 
-// Functional component definition for Event
 const Event: React.FC<EventProps> = ({ event }) => {
-  const navigation = useNavigation(); // Initializing navigation hook
+  const navigation = useNavigation();
 
-  // Function to handle press on the event
   const handleEventPress = () => {
-    navigation.navigate('EventDetail', { event: event }); // Navigating to EventDetail screen with event details
+    navigation.navigate('EventDetail', { event: event });
   };
 
   return (
-    <TouchableOpacity onPress={handleEventPress}> {/* TouchableOpacity for touchable feedback */}
-      <View style={styles.eventContainer}> {/* Container for event */}
+    <TouchableOpacity onPress={handleEventPress}>
+      <View style={styles.eventContainer}>
         <ImageBackground
-          source={{ uri: event.eventImage }} // Setting background image from eventImage URL
-          style={styles.background} // Styling for background image
-          imageStyle={{ borderRadius: 8 }} // Styling for the background image itself
+          source={{ uri: event.eventImage }}
+          style={styles.background}
+          imageStyle={{ borderRadius: 8 }}
         >
-          <View style={styles.container}> {/* Container for event details */}
-            <Text style={styles.title}>{event.eventName}</Text> {/* Event name */}
-            <Text style={styles.details}>Date: {event.eventDate}</Text> {/* Event date */}
-            <Text style={styles.details}>Location: {event.eventCity}</Text> {/* Event location */}
-            <Text style={styles.details}>Category: {event.eventType}</Text> {/* Event category */}
-            <Text style={styles.details}>Description: {event.eventDescription}</Text> {/* Event description */}
+          <View style={styles.container}>
+            <Text style={styles.title}>{event.eventName}</Text>
+            <Text style={styles.details}>Date: {event.eventDate}</Text>
+            <Text style={styles.details}>Location: {event.eventCity}</Text>
+            <Text style={styles.details}>Category: {event.eventType}</Text>
+            <Text style={styles.details}>Description: {event.eventDescription}</Text>
           </View>
         </ImageBackground>
       </View>
@@ -44,35 +42,34 @@ const Event: React.FC<EventProps> = ({ event }) => {
   );
 };
 
-// Styles for Event component
 const styles = StyleSheet.create({
   eventContainer: {
-    width: '100%', // Full width
+    width: '100%',
     height: 200, // Set a fixed height for the Event component
-    marginBottom: 16, // Margin bottom for spacing between events
+    marginBottom: 16,
   },
   container: {
-    padding: 16, // Padding for event details
+    padding: 16,
   },
   background: {
-    flex: 1, // Take up all available space
-    borderRadius: 8, // Border radius for the background image
-    overflow: 'hidden', // Hide overflow content
-    resizeMode: 'cover', // Cover mode for image resizing
-    borderWidth: 1, // Border width
-    borderColor: '#262323', // Border color
+    flex: 1,
+    borderRadius: 8,
+    overflow: 'hidden',
+    resizeMode: 'cover',
+    borderWidth: 1,
+    borderColor: '#262323',
     backgroundColor: 'transparent', // Set background color to transparent
   },
   title: {
-    fontSize: 18, // Font size for event title
-    fontWeight: 'bold', // Bold font weight
-    marginBottom: 8, // Margin bottom for spacing
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 8,
     color: 'white', // Assuming white text for visibility
   },
   details: {
-    fontSize: 16, // Font size for event details
+    fontSize: 16,
     color: 'white', // Assuming white text for visibility
   },
 });
 
-export default Event; // Exporting Event component as default
+export default Event;

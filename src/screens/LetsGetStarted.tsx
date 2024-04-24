@@ -1,29 +1,24 @@
-import { useNavigation } from '@react-navigation/native'; // Import the hook to access navigation
-import React from 'react'; // Import React
-import { Image, StyleSheet, Text, View } from 'react-native'; // Import necessary components from react-native
-import DefButton from '../components/DefButton'; // Import the DefButton component
-
-// Functional component definition for LetsGetStarted screen
+import { useNavigation } from '@react-navigation/native'; // Import the hook
+import React from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import DefButton from '../components/DefButton';
 const LetsGetStarted: React.FC = () => {
-  const navigation = useNavigation(); // Access the navigation object using the useNavigation hook
+  const navigation = useNavigation(); // Use the useNavigation hook to get the navigation object
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>LocaleVenture</Text> {/* Display app title */}
-      <Image source={require('../assets/letsgetstarted.png')} style={styles.image} /> {/* Display an image */}
-      <Text style={styles.description}>Discover local events, plan outings, and stay connected. Let's get started!</Text> {/* Display a description */}
+      <Text style={styles.title}>LocaleVenture</Text>
+      <Image source={require('../assets/letsgetstarted.png')} style={styles.image} />
+      <Text style={styles.description}>Discover local events, plan outings, and stay connected. Let's get started!</Text>
       <View style={styles.buttonContainer}>
-        {/* Render Sign Up button */}
         <DefButton title="Sign Up" onPress={() => navigation.navigate("SignUp")} />
-        <Text>           </Text> {/* Add some space between buttons */}
-        {/* Render Sign In button */}
+        <Text>           </Text>
         <DefButton title="Sign In" onPress={() => navigation.navigate("Login")} />
       </View>
     </View>
   );
 };
 
-// Styles for LetsGetStarted component
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -49,8 +44,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   buttonContainer: {
-    flexDirection: 'row', // Arrange buttons horizontally
+    flexDirection: 'row',
   },
 });
 
-export default LetsGetStarted; // Export LetsGetStarted component as default
+export default LetsGetStarted;

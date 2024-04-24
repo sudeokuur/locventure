@@ -1,74 +1,70 @@
-import auth from '@react-native-firebase/auth'; // Importing auth module from @react-native-firebase/auth
-import { firebase } from '@react-native-firebase/firestore'; // Importing firebase module from @react-native-firebase/firestore
-import { useNavigation } from '@react-navigation/native'; // Importing useNavigation hook from @react-navigation/native
-import React, { useEffect, useState } from 'react'; // Importing React, useEffect, and useState from React library
-import { Button, FlatList, ScrollView, StyleSheet, Text, View } from 'react-native'; // Importing necessary components from react-native
-import Event from '../components/Event'; // Importing the Event component from the components folder
+import auth from '@react-native-firebase/auth';
+import { firebase } from '@react-native-firebase/firestore';
+import { useNavigation } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
+import { Button, FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
+import Event from '../components/Event';
 
-// Functional component definition for HomePage
 const HomePage: React.FC = () => {
-  const [upcomingEvents, setUpcomingEvents] = useState<any[]>([]); // State to store upcoming events
-  const [pastEvents, setPastEvents] = useState<any[]>([]); // State to store past events
-  const [userFirstName, setUserFirstName] = useState<string>(''); // State to store user's first name
-  const [userLocation, setUserLocation] = useState<string>(''); // State to store user's location
-  const navigation = useNavigation(); // Initializing navigation hook
+  const [upcomingEvents, setUpcomingEvents] = useState<any[]>([]);
+  const [pastEvents, setPastEvents] = useState<any[]>([]);
+  const [userFirstName, setUserFirstName] = useState<string>('');
+  const [userLocation, setUserLocation] = useState<string>('');
+  const navigation = useNavigation();
 
-  // Effect to fetch user information and events
   useEffect(() => {
-    // Function to fetch user information
     const fetchUserInfo = async () => {
       try {
-        const currentUser = auth().currentUser; // Getting current user
+        const currentUser = auth().currentUser;
         if (currentUser) {
-          const userId = currentUser.uid; // Getting user ID
-          const userDoc = await firebase.firestore().collection('users').doc(userId).get(); // Getting user document from Firestore
-          const userData = userDoc.data(); // Extracting user data
+          const userId = currentUser.uid;
+          const userDoc = await firebase.firestore().collection('users').doc(userId).get();
+          const userData = userDoc.data();
           if (userData) {
-            setUserFirstName(userData.firstName); // Setting user's first name in state
-            setUserLocation(userData.location); // Setting user's location in state
+            setUserFirstName(userData.firstName);
+            setUserLocation(userData.location);
           }
         }
       } catch (error) {
-        console.error('Error fetching user information:', error); // Logging error if any
+        console.error('Error fetching user information:', error);
       }
     };
 
-    // Function to fetch events from Firestore
     const fetchEvents = async () => {
       try {
-        const db = firebase.firestore(); // Initializing Firestore
-        const snapshot = await db.collection('events').get(); // Getting events collection
-        const currentDate = new Date(); // Getting current date
+        const db = firebase.firestore();
+        const snapshot = await db.collection('events').get();
+        const currentDate = new Date();
     
-        const locationBasedEventsData = []; // Array to store events for the user's location
-        const pastEventsData = []; // Array to store past events
+        const locationBasedEventsData = [];
+        const pastEventsData = [];
     
         snapshot.forEach((doc) => {
-          const eventData = { id: doc.id, ...doc.data() }; // Extracting event data
-          const eventDate = new Date(eventData.eventDate._seconds * 1000); // Converting event date from Firestore timestamp
+          const eventData = { id: doc.id, ...doc.data() };
+          const eventDate = new Date(eventData.eventDate._seconds * 1000);
     
           if (eventDate < currentDate) {
-            pastEventsData.push({ ...eventData, eventDate: eventDate.toLocaleString() }); // Adding past events to the array
+            pastEventsData.push({ ...eventData, eventDate: eventDate.toLocaleString() });
           }
     
-          locationBasedEventsData.push({ ...eventData, eventDate: eventDate.toLocaleString() }); // Adding events for the user's location to the array
+          locationBasedEventsData.push({ ...eventData, eventDate: eventDate.toLocaleString() });
         });
     
-        setUpcomingEvents(locationBasedEventsData); // Setting upcoming events in state
-        setPastEvents(pastEventsData); // Setting past events in state
+        setUpcomingEvents(locationBasedEventsData);
+        setPastEvents(pastEventsData);
       } catch (error) {
-        console.error('Error fetching events from Firestore:', error); // Logging error if any
+        console.error('Error fetching events from Firestore:', error);
       }
     };
+    
 
-    fetchUserInfo(); // Calling fetchUserInfo function
-    fetchEvents(); // Calling fetchEvents function
-  }, [userLocation]); // Effect runs when user location changes
+    fetchUserInfo();
+    fetchEvents();
+  }, [userLocation]);
 
-  // Function to handle logout
   const handleLogout = () => {
-    navigation.navigate('Login'); // Navigating to the Login screen
-    console.log('Logged out!'); // Logging logout message
+    navigation.navigate('Login');
+    console.log('Logged out!');
   };
 
   return (
@@ -83,7 +79,7 @@ const HomePage: React.FC = () => {
           <FlatList
             data={upcomingEvents}
             keyExtractor={(item) => item.id}
-            renderItem={({ item }) => <Event event={item} />} // Rendering Event component for each upcoming event
+            renderItem={({ item }) => <Event event={item} />}
           />
         </View>
         <View style={styles.section}>
@@ -91,17 +87,16 @@ const HomePage: React.FC = () => {
           <FlatList
             data={pastEvents}
             keyExtractor={(item) => item.id}
-            renderItem={({ item }) => <Event event={item} />} // Rendering Event component for each past event
-            horizontal={true} // Displaying past events horizontally
+            renderItem={({ item }) => <Event event={item} />}
+            horizontal={true}
           />
         </View>
-        <Button title="Logout" onPress={handleLogout} /> {/* Logout button */}
+        <Button title="Logout" onPress={handleLogout} />
       </View>
     </ScrollView>
   );
 };
 
-// Styles for HomePage component
 const styles = StyleSheet.create({
   scrollViewContainer: {
     flexGrow: 1,
@@ -140,4 +135,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomePage; // Exporting HomePage component as default
+export default HomePage;

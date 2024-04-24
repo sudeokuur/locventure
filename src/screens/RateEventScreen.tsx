@@ -1,27 +1,23 @@
-import React, { useState } from 'react'; // Import React and useState hook
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'; // Import necessary components from react-native
+import React, { useState } from 'react';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
-// Functional component definition for RateEventScreen
 const RateEventScreen = ({ route, navigation }) => {
-  const { eventId } = route.params; // Extract eventId from route params
-  const [rating, setRating] = useState(0); // State variable for rating, initialized to 0
-  const [comment, setComment] = useState(''); // State variable for comment, initialized to empty string
+  const { eventId } = route.params;
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState('');
 
-  // Function to handle rating change
   const handleRatingChange = (value) => {
-    setRating(value); // Update rating state with the selected value
+    setRating(value);
   };
 
-  // Function to handle comment change
   const handleCommentChange = (text) => {
-    setComment(text); // Update comment state with the entered text
+    setComment(text);
   };
 
-  // Function to submit rating and comment
   const submitRating = () => {
-    // Logic to submit the rating and comment to the database
-    console.log('Rating:', rating); // Log the rating
-    console.log('Comment:', comment); // Log the comment
+    // Here you can implement logic to submit the rating and comment to your database
+    console.log('Rating:', rating);
+    console.log('Comment:', comment);
     // After submitting, navigate back to the event detail screen
     navigation.goBack();
   };
@@ -36,7 +32,7 @@ const RateEventScreen = ({ route, navigation }) => {
             <TouchableOpacity
               key={value}
               style={[styles.star, value <= rating ? styles.starSelected : null]}
-              onPress={() => handleRatingChange(value)} // Call handleRatingChange with the selected value onPress
+              onPress={() => handleRatingChange(value)}
             />
           ))}
         </View>
@@ -45,7 +41,7 @@ const RateEventScreen = ({ route, navigation }) => {
         style={styles.commentInput}
         placeholder="Add a comment..."
         value={comment}
-        onChangeText={handleCommentChange} // Call handleCommentChange onChangeText
+        onChangeText={handleCommentChange}
       />
       <TouchableOpacity style={styles.submitButton} onPress={submitRating}>
         <Text style={styles.submitButtonText}>Submit</Text>
@@ -54,7 +50,6 @@ const RateEventScreen = ({ route, navigation }) => {
   );
 };
 
-// Styles for RateEventScreen component
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -108,4 +103,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RateEventScreen; // Export RateEventScreen component as default
+export default RateEventScreen;

@@ -1,32 +1,29 @@
-import auth from "@react-native-firebase/auth"; // Import auth from @react-native-firebase/auth for user authentication
-import firestore from "@react-native-firebase/firestore"; // Import firestore from @react-native-firebase/firestore for database operations
-import { useNavigation } from "@react-navigation/native"; // Import useNavigation hook from @react-navigation/native for navigation
-import React, { useState } from "react"; // Import React, useState
-import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native"; // Import necessary components from react-native
-import DefButton from "../components/DefButton"; // Import custom button component
+import auth from "@react-native-firebase/auth";
+import firestore from "@react-native-firebase/firestore";
+import { useNavigation } from "@react-navigation/native";
+import React, { useState } from "react";
+import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import DefButton from "../components/DefButton";
 
-// Functional component definition for SignUpScreen
 const SignUpScreen = () => {
-    const navigation = useNavigation(); // Use useNavigation hook to get the navigation object
+    const navigation = useNavigation();
 
-    // State variables for email, password, confirm password, selected location, first name, last name, and dropdown visibility
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    const [selectedLocation, setSelectedLocation] = useState("");
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [dropdownVisible, setDropdownVisible] = useState(false);
+    const [selectedLocation, setSelectedLocation] = useState(""); // State to store selected location
+    const [firstName, setFirstName] = useState(""); // State to store user's first name
+    const [lastName, setLastName] = useState(""); // State to store user's last name
+    const [dropdownVisible, setDropdownVisible] = useState(false); // State to manage dropdown visibility
 
-    // Function to handle user sign up
     const SignUpTestFn = async () => {
-        if (password !== confirmPassword) { // Check if passwords match
-            Alert.alert("Passwords do not match"); // Display alert if passwords do not match
+        if (password !== confirmPassword) {
+            Alert.alert("Passwords do not match");
             return;
         }
 
         try {
-            // Create user account with email and password
+            // Create user account
             const userCredential = await auth().createUserWithEmailAndPassword(email, password);
 
             // Save additional user data to Firestore
@@ -37,17 +34,18 @@ const SignUpScreen = () => {
                 location: selectedLocation,
             });
 
-            Alert.alert("User created with those credentials", email); // Display alert for successful user creation
+            Alert.alert("User created with those credentials", email);
         } catch (error) {
-            console.error(error); // Log error if user creation fails
-            Alert.alert("Error creating user", error.message); // Display alert for error message
+            console.error(error);
+            Alert.alert("Error creating user", error.message);
         }
     };
 
-    const locationOptions = ["Select Location", "Ankara", "Istanbul", "Izmir"]; // Array of location options
+    const locationOptions = ["Select Location", "Ankara", "Istanbul", "Izmir"];
 
     return (
         <View style={styles.container}>
+<<<<<<< HEAD
             {/* Main container view */}
             <TouchableOpacity onPress={() => navigation.navigate("LetsGetStarted")} style={styles.backButton}>
                 <Text style={styles.backButtonText}>{'<'}</Text>
@@ -58,27 +56,44 @@ const SignUpScreen = () => {
                 <Text style={styles.createAccText}>Sign Up</Text>
                 {/* Sign up text */}
                 {/* Text input fields for email, password, confirm password, first name, and last name */}
+=======
+            <TouchableOpacity onPress={() => navigation.navigate("LetsGetStarted")} style={styles.backButton}>
+                <Text style={styles.backButtonText}>{'<'}</Text>
+            </TouchableOpacity>
+            <View style={styles.inputsContainer}>
+                <Text style={styles.createAccText}>Sign Up</Text>
+>>>>>>> parent of 5b0fbce5 (command lines added as supervisor wanted for code review.)
                 <TextInput value={email} onChangeText={text => setEmail(text)} placeholder="Enter Email Address" style={styles.input} />
                 <TextInput value={password} onChangeText={text => setPassword(text)} placeholder="Enter Password" secureTextEntry style={styles.input} />
                 <TextInput value={confirmPassword} onChangeText={text => setConfirmPassword(text)} placeholder="Confirm Password" secureTextEntry style={styles.input} />
                 <TextInput value={firstName} onChangeText={text => setFirstName(text)} placeholder="First Name" style={styles.input} />
                 <TextInput value={lastName} onChangeText={text => setLastName(text)} placeholder="Last Name" style={styles.input} />
                 <View style={styles.locationContainer}>
+<<<<<<< HEAD
                     {/* Container for location dropdown */}
                     <Text style={styles.locationLabel}>Location:</Text>
                     {/* Location label */}
                     {/* Dropdown trigger to select location */}
+=======
+                    <Text style={styles.locationLabel}>Location:</Text>
+>>>>>>> parent of 5b0fbce5 (command lines added as supervisor wanted for code review.)
                     <TouchableOpacity
                         onPress={() => setDropdownVisible(!dropdownVisible)}
                         style={styles.dropdownTrigger}
                     >
                         <Text style={styles.dropdownText}>{selectedLocation || "Select Location"}</Text>
+<<<<<<< HEAD
                         {/* Selected location or default text */}
                     </TouchableOpacity>
                     {dropdownVisible && (
                         <View style={styles.dropdownMenu}>
                             {/* Dropdown menu container */}
                             {/* Render location options */}
+=======
+                    </TouchableOpacity>
+                    {dropdownVisible && (
+                        <View style={styles.dropdownMenu}>
+>>>>>>> parent of 5b0fbce5 (command lines added as supervisor wanted for code review.)
                             {locationOptions.map((option, index) => (
                                 <TouchableOpacity
                                     key={index}
@@ -95,13 +110,15 @@ const SignUpScreen = () => {
                     )}
                 </View>
                 <DefButton style={styles.signUpButton} title="Sign Up" onPress={SignUpTestFn} />
+<<<<<<< HEAD
                 {/* Sign up button */}
+=======
+>>>>>>> parent of 5b0fbce5 (command lines added as supervisor wanted for code review.)
             </View>
         </View>
     );
 };
 
-// Styles for SignUpScreen component
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -180,4 +197,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default SignUpScreen; // Export SignUpScreen component as default
+export default SignUpScreen;

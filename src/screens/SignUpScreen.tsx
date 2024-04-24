@@ -44,17 +44,18 @@ const SignUpScreen = () => {
     const locationOptions = ["Select Location", "Ankara", "Istanbul", "Izmir"];
 
     return (
+<<<<<<< HEAD
         <View style={styles.container}>
 <<<<<<< HEAD
             {/* Main container view */}
+=======
+        <View style={styles.container}> {/* Main container view */}
+>>>>>>> parent of c849690f (fix commit)
             <TouchableOpacity onPress={() => navigation.navigate("LetsGetStarted")} style={styles.backButton}>
-                <Text style={styles.backButtonText}>{'<'}</Text>
-                {/* Back button */}
+                <Text style={styles.backButtonText}>{'<'}</Text> {/* Back button */}
             </TouchableOpacity>
-            <View style={styles.inputsContainer}>
-                {/* Container for input fields */}
-                <Text style={styles.createAccText}>Sign Up</Text>
-                {/* Sign up text */}
+            <View style={styles.inputsContainer}> {/* Container for input fields */}
+                <Text style={styles.createAccText}>Sign Up</Text> {/* Sign up text */}
                 {/* Text input fields for email, password, confirm password, first name, and last name */}
 =======
             <TouchableOpacity onPress={() => navigation.navigate("LetsGetStarted")} style={styles.backButton}>
@@ -68,11 +69,16 @@ const SignUpScreen = () => {
                 <TextInput value={confirmPassword} onChangeText={text => setConfirmPassword(text)} placeholder="Confirm Password" secureTextEntry style={styles.input} />
                 <TextInput value={firstName} onChangeText={text => setFirstName(text)} placeholder="First Name" style={styles.input} />
                 <TextInput value={lastName} onChangeText={text => setLastName(text)} placeholder="Last Name" style={styles.input} />
+<<<<<<< HEAD
                 <View style={styles.locationContainer}>
 <<<<<<< HEAD
                     {/* Container for location dropdown */}
                     <Text style={styles.locationLabel}>Location:</Text>
                     {/* Location label */}
+=======
+                <View style={styles.locationContainer}> {/* Container for location dropdown */}
+                    <Text style={styles.locationLabel}>Location:</Text> {/* Location label */}
+>>>>>>> parent of c849690f (fix commit)
                     {/* Dropdown trigger to select location */}
 =======
                     <Text style={styles.locationLabel}>Location:</Text>
@@ -81,13 +87,16 @@ const SignUpScreen = () => {
                         onPress={() => setDropdownVisible(!dropdownVisible)}
                         style={styles.dropdownTrigger}
                     >
+<<<<<<< HEAD
                         <Text style={styles.dropdownText}>{selectedLocation || "Select Location"}</Text>
 <<<<<<< HEAD
                         {/* Selected location or default text */}
+=======
+                        <Text style={styles.dropdownText}>{selectedLocation || "Select Location"}</Text> {/* Selected location or default text */}
+>>>>>>> parent of c849690f (fix commit)
                     </TouchableOpacity>
-                    {dropdownVisible && (
-                        <View style={styles.dropdownMenu}>
-                            {/* Dropdown menu container */}
+                    {dropdownVisible && ( {/* Dropdown menu */}
+                        <View style={styles.dropdownMenu}> {/* Dropdown menu container */}
                             {/* Render location options */}
 =======
                     </TouchableOpacity>
@@ -109,11 +118,15 @@ const SignUpScreen = () => {
                         </View>
                     )}
                 </View>
+<<<<<<< HEAD
                 <DefButton style={styles.signUpButton} title="Sign Up" onPress={SignUpTestFn} />
 <<<<<<< HEAD
                 {/* Sign up button */}
 =======
 >>>>>>> parent of 5b0fbce5 (command lines added as supervisor wanted for code review.)
+=======
+                <DefButton style={styles.signUpButton} title="Sign Up" onPress={SignUpTestFn} /> {/* Sign up button */}
+>>>>>>> parent of c849690f (fix commit)
             </View>
         </View>
     );

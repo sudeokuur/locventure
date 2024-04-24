@@ -16,6 +16,7 @@ drawable src_assets_categorybutton
 drawable src_assets_homebutton
 drawable src_assets_letsgetstarted
 drawable src_assets_profilelogo
+drawable src_assets_profilelogofortab
 drawable src_assets_searchbutton
 integer react_native_dev_server_port
 integer react_native_inspector_proxy_port

@@ -72,6 +72,10 @@
         "source": "com.locventure.app-res-34:/drawable-xhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_profilelogofortab.jpg.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_profilelogofortab.jpg"
+    },
+    {
         "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_categorybutton.png.flat",
         "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_categorybutton.png"
     },

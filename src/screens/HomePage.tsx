@@ -98,7 +98,7 @@ const HomePage: React.FC = () => {
             <Event key={event.id} event={event} />
           ))}
         </View>
-        <Button title="Logout" onPress={handleLogout} />
+        <Button title="Logout" onPress={handleLogout} color="#FD94FD" />
       </View>
     </ScrollView>
   );
@@ -121,13 +121,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 16,
-    color: 'white',
+    color: '#DE9EF8',
   },
   welcomeMessage: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 16,
-    color: 'white',
+    color: '#D263FF',
   },
   noEventsMessage: {
     fontSize: 16,

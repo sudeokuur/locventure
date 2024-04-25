@@ -35,7 +35,7 @@ const SelectedEventScreen: React.FC<{ route: { params: { category: string } } }>
             <View key={event.id} style={styles.eventItem}>
               <Text style={styles.eventName}>{event.eventName}</Text>
               {/* Render other event details */}
-              {<Text>Location: {event.eventLocation}</Text>}
+              {<Text>Location: {event.eventCity}</Text>}
             </View>
           ))
         ) : (

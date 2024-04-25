@@ -79,7 +79,7 @@ const ProfileScreen: React.FC = () => {
         value={location}
         onChangeText={(text) => setLocation(text)}
       />
-      <Button title="Update Profile" onPress={handleUpdateProfile} color="purple" />
+      <Button title="Update Profile" onPress={handleUpdateProfile} color="#D070FC" />
     </View>
   );
 };
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 16,
-    color: 'white',
+    color: '#CF63FF',
   },
   input: {
     marginBottom: 16,
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'darkgray',
     borderRadius: 8,
-    backgroundColor: 'darkgray',
+    backgroundColor: '#D9C7E1',
     color: 'black',
   },
 });

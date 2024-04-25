@@ -74,7 +74,7 @@ const EventDetailScreen = ({ route }) => {
       return '';
     }
     const date = timestamp.toDate();
-    return date.toLocaleDateString();
+    return date.toDateString(); // Use toDateString() to format the date
   };
   
   const isEventPast = (timestamp) => {
@@ -87,69 +87,63 @@ const EventDetailScreen = ({ route }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollContainer} inverted>
-        <ImageBackground source={{ uri: event.eventImage }} style={styles.imageBackground}>
-          <Text style={styles.title}>{event.eventName}</Text>
-        </ImageBackground>
-        <View style={styles.detailsContainer}>
-          <View style={styles.detailRow}>
-            <Text style={styles.detailLabel}>Date:</Text>
-            <Text style={styles.detailText}>{formatDate(event.eventDate)}</Text>
-          </View>
-          <View style={styles.detailRow}>
-            <Text style={styles.detailLabel}>Location:</Text>
-            <Text style={styles.detailText}>{event.eventCity}</Text>
-          </View>
-          <View style={styles.detailRow}>
-            <Text style={styles.detailLabel}>Time:</Text>
-            <Text style={styles.detailText}>{event.eventTime}</Text>
-          </View>
-          <View style={styles.detailRow}>
-            <Text style={styles.detailLabel}>Description:</Text>
-            <Text style={styles.detailText}>{event.eventDescription}</Text>
-          </View>
-          <View style={styles.detailRow}>
-            <Text style={styles.detailLabel}>Type:</Text>
-            <Text style={styles.detailText}>{event.eventType}</Text>
-          </View>
+    <ScrollView contentContainerStyle={styles.container}>
+      <ImageBackground source={{ uri: event.eventImage }} style={styles.imageBackground}>
+        <Text style={styles.title}>{event.eventName}</Text>
+      </ImageBackground>
+      <View style={styles.detailsContainer}>
+      <View style={styles.detailRow}>
+          <Text style={styles.detailLabel}>Date:</Text>
+          <Text style={styles.detailText}>{formatDate(event.eventDate)}</Text>
+      </View>
+        <View style={styles.detailRow}>
+          <Text style={styles.detailLabel}>Location:</Text>
+          <Text style={styles.detailText}>{event.eventCity}</Text>
         </View>
-        {userResponse && (
-          <View style={styles.responseContainer}>
-            <Text style={styles.responseText}>Your Response: {userResponse}</Text>
-          </View>
-        )}
-        {!userResponse && !isEventPast(event.eventDate) && (
-          <View style={styles.responseContainer}>
-            <TouchableOpacity style={styles.responseButton} onPress={() => respondToEvent('yes')}>
-              <Text style={styles.responseButtonText}>Yes</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.responseButton} onPress={() => respondToEvent('maybe')}>
-              <Text style={styles.responseButtonText}>Maybe</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.responseButton} onPress={() => respondToEvent('no')}>
-              <Text style={styles.responseButtonText}>No</Text>
-            </TouchableOpacity>
-          </View>
-        )}
-        {(userResponse !== null || isEventPast(event.eventDate)) && (
-          <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-            <Text style={styles.backButtonText}>Back</Text>
+        <View style={styles.detailRow}>
+          <Text style={styles.detailLabel}>Time:</Text>
+          <Text style={styles.detailText}>{event.eventTime}</Text>
+        </View>
+        <View style={styles.detailRow}>
+          <Text style={styles.detailLabel}>Description:</Text>
+          <Text style={styles.detailText}>{event.eventDescription}</Text>
+        </View>
+        <View style={styles.detailRow}>
+          <Text style={styles.detailLabel}>Type:</Text>
+          <Text style={styles.detailText}>{event.eventType}</Text>
+        </View>
+      </View>
+      {userResponse && (
+        <View style={styles.responseContainer}>
+          <Text style={styles.responseText}>Your Response: {userResponse}</Text>
+        </View>
+      )}
+      {!userResponse && !isEventPast(event.eventDate) && (
+        <View style={styles.responseContainer}>
+          <TouchableOpacity style={styles.responseButton} onPress={() => respondToEvent('yes')}>
+            <Text style={styles.responseButtonText}>Yes</Text>
           </TouchableOpacity>
-        )}
-      </ScrollView>
-    </View>
+          <TouchableOpacity style={styles.responseButton} onPress={() => respondToEvent('maybe')}>
+            <Text style={styles.responseButtonText}>Maybe</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.responseButton} onPress={() => respondToEvent('no')}>
+            <Text style={styles.responseButtonText}>No</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+      {(userResponse !== null || isEventPast(event.eventDate)) && (
+        <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+          <Text style={styles.backButtonText}>Back</Text>
+        </TouchableOpacity>
+      )}
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'black',
-  },
-  scrollContainer: {
     flexGrow: 1,
-    justifyContent: 'flex-end',
+    backgroundColor: 'black',
   },
   imageBackground: {
     width: '100%',
@@ -174,19 +168,20 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   detailLabel: {
+    flex: 0.4,
     fontSize: 18,
     fontWeight: 'bold',
     color: 'white',
-    marginRight: 8,
   },
   detailText: {
+    flex: 0.6,
     fontSize: 18,
     color: 'white',
   },
   responseContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: 200,
+    marginTop: 16,
   },
   responseButton: {
     backgroundColor: 'green',
@@ -203,6 +198,8 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: 'white',
+    marginTop: 16,
+    textAlign: 'center',
   },
   backButton: {
     position: 'absolute',

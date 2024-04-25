@@ -3,9 +3,14 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
 import { ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-
+// This function updates the event response in Firestore
 const updateEventResponse = async (userId, eventId, response) => {
   try {
+    if (response === undefined) {
+      console.error('Response is undefined.');
+      return;
+    }
+
     const eventRef = firebase.firestore().collection('events').doc(eventId);
     await eventRef.update({
       [`responses.${userId}`]: response
@@ -17,11 +22,12 @@ const updateEventResponse = async (userId, eventId, response) => {
   }
 };
 
+// This function retrieves the user's response to the event from Firestore
 const getUserEventResponse = async (userId, eventId) => {
   try {
     const eventRef = firebase.firestore().collection('events').doc(eventId);
     const eventDoc = await eventRef.get();
-      if (eventDoc.exists) {
+    if (eventDoc.exists) {
       const eventData = eventDoc.data();
       
       if (eventData.responses && eventData.responses[userId]) {
@@ -40,7 +46,6 @@ const EventDetailScreen = ({ route }) => {
   const { event } = route.params;
   const navigation = useNavigation();
 
-  const [response, setResponse] = useState(null);
   const [userResponse, setUserResponse] = useState(null);
 
   useEffect(() => {
@@ -52,6 +57,17 @@ const EventDetailScreen = ({ route }) => {
     };
     checkUserResponse();
   }, [event.id]);
+
+  // Function to handle responding to the event
+  const respondToEvent = async (response) => {
+    try {
+      const userId = firebase.auth().currentUser.uid;
+      await updateEventResponse(userId, event.id, response);
+      setUserResponse(response);
+    } catch (error) {
+      console.error('Error responding to event:', error);
+    }
+  };
 
   const formatDate = (timestamp) => {
     if (!timestamp || !timestamp.toDate) {
@@ -105,13 +121,13 @@ const EventDetailScreen = ({ route }) => {
         )}
         {!userResponse && !isEventPast(event.eventDate) && (
           <View style={styles.responseContainer}>
-            <TouchableOpacity style={styles.responseButton} onPress={() => updateResponse('yes')}>
+            <TouchableOpacity style={styles.responseButton} onPress={() => respondToEvent('yes')}>
               <Text style={styles.responseButtonText}>Yes</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.responseButton} onPress={() => updateResponse('maybe')}>
+            <TouchableOpacity style={styles.responseButton} onPress={() => respondToEvent('maybe')}>
               <Text style={styles.responseButtonText}>Maybe</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.responseButton} onPress={() => updateResponse('no')}>
+            <TouchableOpacity style={styles.responseButton} onPress={() => respondToEvent('no')}>
               <Text style={styles.responseButtonText}>No</Text>
             </TouchableOpacity>
           </View>

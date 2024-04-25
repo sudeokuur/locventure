@@ -21,27 +21,30 @@ const SignUpScreen = () => {
             Alert.alert("Passwords do not match");
             return;
         }
-
+    
         try {
             // Create user account
             const userCredential = await auth().createUserWithEmailAndPassword(email, password);
-
-            // Save additional user data to Firestore
-            await firestore().collection('users').doc(userCredential.user.uid).set({
+    
+            // Generate a unique userId
+            const userId = userCredential.user.uid;
+    
+            // Save additional user data to Firestore with the generated userId
+            await firestore().collection('users').doc(userId).set({
+                userId, // Store userId in the document
                 email,
                 firstName,
                 lastName,
                 location: selectedLocation,
             });
-
+    
             Alert.alert("User created with those credentials", email);
         } catch (error) {
             console.error(error);
             Alert.alert("Error creating user", error.message);
         }
     };
-
-    const locationOptions = ["Select Location", "Ankara", "Istanbul", "Izmir"];
+    const locationOptions = ["Select Location", "Ankara", "İstanbul", "İzmir"];
 
     return (
         <View style={styles.container}>

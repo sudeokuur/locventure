@@ -1,3 +1,5 @@
+//this screen is for Categories. When a category selected, this screen comes
+//if there is an event found for category, it brings the event. else, it throws an exception about there is no event for the selected category.
 import { firebase } from '@react-native-firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';

@@ -1,44 +1,52 @@
+import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
 const ProfileScreen: React.FC = () => {
-  const [userName, setUserName] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [location, setLocation] = useState('');
 
   useEffect(() => {
-    // Fetch user data from Firestore
-    const fetchUserData = async () => {
+    // Fetch current user data from Firestore
+    const fetchCurrentUser = async () => {
       try {
-        const userDoc = await firestore().collection('users').doc('USER_ID').get();
-        const userData = userDoc.data();
+        const currentUser = auth().currentUser;
+        if (currentUser) {
+          const userDoc = await firestore().collection('users').doc(currentUser.uid).get();
+          const userData = userDoc.data();
 
-        if (userData) {
-          setUserName(userData.userName);
-          setPhoneNumber(userData.phoneNumber);
-          setEmail(userData.email);
-          setLocation(userData.location);
+          if (userData) {
+            setFirstName(userData.firstName || '');
+            setLastName(userData.lastName || '');
+            setEmail(userData.email || '');
+            setLocation(userData.location || '');
+          }
         }
       } catch (error) {
-        console.error('Error fetching user data:', error);
+        console.error('Error fetching current user data:', error);
       }
     };
 
-    fetchUserData();
+    fetchCurrentUser();
   }, []);
 
   const handleUpdateProfile = async () => {
     try {
-      // Update user profile in Firestore
-      await firestore().collection('users').doc('USER_ID').update({
-        userName,
-        phoneNumber,
-        email,
-        location,
-      });
-      console.log('Profile updated successfully!');
+      const currentUser = auth().currentUser;
+      if (currentUser) {
+        await firestore().collection('users').doc(currentUser.uid).update({
+          firstName,
+          lastName,
+          email,
+          location,
+        });
+        console.log('Profile updated successfully!');
+      } else {
+        console.log('No user is currently authenticated.');
+      }
     } catch (error) {
       console.error('Error updating profile:', error);
     }
@@ -49,15 +57,15 @@ const ProfileScreen: React.FC = () => {
       <Text style={styles.header}>Profile</Text>
       <TextInput
         style={styles.input}
-        placeholder="Full Name"
-        value={userName}
-        onChangeText={(text) => setUserName(text)}
+        placeholder="First Name"
+        value={firstName}
+        onChangeText={(text) => setFirstName(text)}
       />
       <TextInput
         style={styles.input}
-        placeholder="Phone Number"
-        value={phoneNumber}
-        onChangeText={(text) => setPhoneNumber(text)}
+        placeholder="Last Name"
+        value={lastName}
+        onChangeText={(text) => setLastName(text)}
       />
       <TextInput
         style={styles.input}

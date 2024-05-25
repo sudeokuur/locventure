@@ -125,5 +125,13 @@ dependencies {
         implementation jscFlavor
     }
 }
+dependencies {
+  implementation 'com.android.support:multidex:2.0.1' //enter the latest multidex version
+}
+android {
+    defaultConfig {
+        multiDexEnabled true
+    }
+}
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)

@@ -1,0 +1,154 @@
+[
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_homebutton.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_homebutton.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_categories_concert.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_categories_concert.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_letsgetstarted.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_letsgetstarted.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.locventure.app-main-41:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_categories_camping.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_categories_camping.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backiconmask.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_categories_sport.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_categories_sport.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_categories_theatre.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_categories_theatre.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable_rn_edit_text_material.xml.flat",
+        "source": "com.locventure.app-main-41:/drawable/rn_edit_text_material.xml"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-xhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_profilelogofortab.jpg.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_profilelogofortab.jpg"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_categorybutton.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_categorybutton.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_categories_familyfriendly.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_categories_familyfriendly.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_categories_festival.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_categories_festival.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-hdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_categories_party.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_categories_party.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.locventure.app-main-41:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_searchbutton.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_searchbutton.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-xxxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/drawable-mdpi_src_assets_categories_outdoor.png.flat",
+        "source": "com.locventure.app-res-34:/drawable-mdpi/src_assets_categories_outdoor.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-ldpi_ic_launcher.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-ldpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.locventure.app-merged_res-40:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.locventure.app-main-41:/mipmap-xhdpi/ic_launcher_foreground.png"
+    }
+]

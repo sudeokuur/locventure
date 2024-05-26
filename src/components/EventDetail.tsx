@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
   details: {
     fontSize: 18,
     marginBottom: 8,
+    color: "white",
   },
   errorText: {
     fontSize: 18,
